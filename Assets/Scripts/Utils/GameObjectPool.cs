@@ -46,5 +46,10 @@ namespace Utils
             utilizedGameObject.gameObject.SetActive(false);
             utilizedGameObject.transform.parent = _utilizationContainer;
         }
+
+        private void OnDestroy()
+        {
+            _pool.Clear();
+        }
     }
 }

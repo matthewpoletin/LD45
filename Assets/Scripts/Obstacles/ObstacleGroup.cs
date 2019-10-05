@@ -19,7 +19,7 @@ namespace Nothing
             var deleter = other.gameObject.GetComponent<ObstaclesDeleter>();
 
             if (deleter != null)
-                Destroy(gameObject);
+                GameModule.Instance.GameObjectPool.UtilizeObject(gameObject);
 
             if (player is null)
                 return;
