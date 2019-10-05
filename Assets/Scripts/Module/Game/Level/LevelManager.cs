@@ -9,7 +9,9 @@ namespace Module.Game.Level
     public class LevelManager : MonoBehaviour
     {
         private const float CHUNK_LENGTH = 20.0f;
-        
+
+        public float CurrentLevelMovemnetSpeed = 0f;  
+
         [SerializeField] private Transform chunksContainer = null;
 
         private static string[] _chunckResources =
