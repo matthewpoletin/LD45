@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 namespace Nothing
 {
@@ -23,8 +23,18 @@ namespace Nothing
         public bool IsChangingLine { get; private set; } = false;
         [field: SerializeField, HideInInspector]
         public bool IsJumping { get; private set; } = false;
-        [field: SerializeField, HideInInspector]
-        public int Lives { get; set; } = 3;
+        public int Lives
+        {
+            get => lives;
+            set
+            {
+                lives = value;
+                if (lives == 0)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+        [SerializeField, HideInInspector]
+        private int lives = 3;
         [field: SerializeField, HideInInspector]
         public Weapon Weapon { get; set; }
 

@@ -10,5 +10,7 @@ namespace Module.Game
         [SerializeField] private List<LevelParams> levels = null;
 
         public List<LevelParams> Levels => levels;
+
+        public float lineWidth = 3;
     }
 }

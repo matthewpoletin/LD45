@@ -26,6 +26,7 @@ namespace Module.Game
 
         #endregion
 
+        public GameParams GameParams => gameParams;
         public GameObjectPool GameObjectPool => gameObjectPool;
         public LevelManager LevelManager => levelManager;
 

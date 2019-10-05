@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Nothing
 {
-    public class ObstaclesDeleter : MonoBehaviour
+    public class LevelObjectDeleter : MonoBehaviour
     {
 
     }

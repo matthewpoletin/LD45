@@ -5,18 +5,12 @@ using UnityEngine.SceneManagement;
 
 namespace Nothing
 {
-    public class ObstacleGroup : MonoBehaviour
+    public class ObstacleGroup : LevelObject
     {
-        private void Update()
-        {
-            var newZ = transform.localPosition.z - Time.deltaTime * GameModule.Instance.LevelManager.CurrentLevelMovementSpeed;
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, newZ);
-        }
-
         public void OnTriggerEnter(Collider other)
         {
             var player = other.gameObject.GetComponent<Player>();
-            var deleter = other.gameObject.GetComponent<ObstaclesDeleter>();
+            var deleter = other.gameObject.GetComponent<LevelObjectDeleter>();
 
             if (deleter != null)
                 GameModule.Instance.GameObjectPool.UtilizeObject(gameObject);
@@ -24,7 +18,7 @@ namespace Nothing
             if (player is null)
                 return;
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            player.Lives = 0;
         }
     }
 }

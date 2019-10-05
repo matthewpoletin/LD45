@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5495175441716413900}
   - component: {fileID: 3036550093722199207}
   m_Layer: 0
-  m_Name: Obstacle_2
+  m_Name: ObstacleGroup_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353a1cc8628db8849a107f1250538ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
 --- !u!1 &8591731645761213144
 GameObject:
   m_ObjectHideFlags: 0
