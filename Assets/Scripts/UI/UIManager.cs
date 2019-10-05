@@ -8,11 +8,8 @@ namespace Nothing
     {
         public Player player;
 
-        public TextMeshProUGUI moneyText;
-
         private void Update()
         {
-            moneyText.text = "Money: " + player.Money;
         }
     }
 }

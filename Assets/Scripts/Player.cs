@@ -22,8 +22,6 @@ namespace Nothing
         [field: SerializeField, HideInInspector]
         public bool IsChangingLine { get; private set; } = false;
         [field: SerializeField, HideInInspector]
-        public int Money { get; set; } = 0;
-        [field: SerializeField, HideInInspector]
         public Weapon Weapon { get; set; }
 
         public float lineWidth = 3;
