@@ -22,6 +22,7 @@ namespace Utils
             if (poolGameObject != default(GameObject))
             {
                 _pool.Remove(poolGameObject);
+                poolGameObject.SetActive(true);
                 return poolGameObject;
             }
 
@@ -32,6 +33,7 @@ namespace Utils
         public void UtilizeObject(GameObject utilizedGameObject)
         {
             _pool.Add(utilizedGameObject);
+            utilizedGameObject.gameObject.SetActive(false);
             utilizedGameObject.transform.parent = _utilizationContainer;
         }
     }
