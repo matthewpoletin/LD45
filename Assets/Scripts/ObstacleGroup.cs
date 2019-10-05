@@ -9,7 +9,7 @@ namespace Nothing
     {
         private void Update()
         {
-            var newZ = transform.localPosition.z - Time.deltaTime * GameModule.Instance.LevelManager.CurrentLevelMovemnetSpeed;
+            var newZ = transform.localPosition.z - Time.deltaTime * GameModule.Instance.LevelManager.CurrentLevelMovementSpeed;
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, newZ);
         }
 
