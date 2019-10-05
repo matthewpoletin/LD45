@@ -37,6 +37,13 @@ namespace Module.Game.Level
             ApplicationResources.LEVEL_1_CHUNK_1,
             ApplicationResources.LEVEL_1_CHUNK_2,
             ApplicationResources.LEVEL_1_CHUNK_3,
+            ApplicationResources.LEVEL_1_CHUNK_4,
+            ApplicationResources.LEVEL_1_CHUNK_5,
+            ApplicationResources.LEVEL_1_CHUNK_6,
+            ApplicationResources.LEVEL_1_CHUNK_7,
+            ApplicationResources.LEVEL_1_CHUNK_8,
+            ApplicationResources.LEVEL_1_CHUNK_9,
+            ApplicationResources.LEVEL_1_CHUNK_10,
         };
 
         private List<GameObject> _chunkPrefabs = new List<GameObject>();
