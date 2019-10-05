@@ -24,44 +24,37 @@ namespace Module.Game.Level
 
     public class LevelManager : MonoBehaviour
     {
-        private const float CHUNK_LENGTH = 20.0f;
-
         private float _currentLevelMovementSpeed = 15f;
 
         public float CurrentLevelMovementSpeed => Mathf.Max(0f, _currentLevelMovementSpeed);
 
         [SerializeField] private Transform chunksContainer = null;
 
-        private static string[] _chunckResources =
-        {
-            ApplicationResources.LEVEL_1_CHUNK_1,
-            ApplicationResources.LEVEL_1_CHUNK_2,
-            ApplicationResources.LEVEL_1_CHUNK_3,
-            ApplicationResources.LEVEL_1_CHUNK_4,
-            ApplicationResources.LEVEL_1_CHUNK_5,
-            ApplicationResources.LEVEL_1_CHUNK_6,
-            ApplicationResources.LEVEL_1_CHUNK_7,
-            ApplicationResources.LEVEL_1_CHUNK_8,
-            ApplicationResources.LEVEL_1_CHUNK_9,
-            ApplicationResources.LEVEL_1_CHUNK_10,
-        };
-
-        private List<GameObject> _chunkPrefabs = new List<GameObject>();
-
         private List<ChunkData> _chunks = new List<ChunkData>();
 
-        public void Init()
+        private LevelParams _levelParams = null;
+
+        private int _currentWaveIndex = 0;
+
+        public void Init(LevelParams levelParams)
         {
+            _levelParams = levelParams;
+
+            _currentWaveIndex = 0;
+
             // Load prefab resources
-            foreach (var chunkResourceFile in _chunckResources)
+            foreach (var waveParams in _levelParams.Waves)
             {
-                var chunkPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(chunkResourceFile);
-                _chunkPrefabs.Add(chunkPrefab);
+                foreach (var chunkParams in waveParams.Chunks)
+                {
+                    // Add chunks to object pool
+                }
             }
+
+            CreateLevel();
         }
 
-        /// <summary>Create first level chunks</summary>
-        public void CreateLevel()
+        private void CreateLevel()
         {
             for (var i = 0; i < 10; i++)
             {
@@ -74,19 +67,20 @@ namespace Module.Game.Level
             var previousChunkZ =
                 _chunks.Count != 0 ? _chunks[_chunks.Count - 1].EndPositionZ : chunksContainer.transform.position.z;
 
-            var randomChunkPrefab = GetRandomChunk();
-            var chunkGameObject = GameModule.Instance.GameObjectPool.GetObject(randomChunkPrefab, chunksContainer);
+            var randomChunkParams = GetRandomChunk();
+            var chunkGameObject = GameModule.Instance.GameObjectPool.GetObject(randomChunkParams.ChunkPrefab, chunksContainer);
             chunkGameObject.transform.position = new Vector3(0, 0, previousChunkZ);
 
-            var chunkData = new ChunkData(chunkGameObject, CHUNK_LENGTH);
+            var chunkData = new ChunkData(chunkGameObject, randomChunkParams.ChunkLength);
             _chunks.Add(chunkData);
         }
 
-        private GameObject GetRandomChunk()
+        private ChunkParams GetRandomChunk()
         {
-            var index = Random.Range(0, _chunkPrefabs.Count);
-            var randomChunkPrefab = _chunkPrefabs.ElementAt(index);
-            return randomChunkPrefab;
+            var currentWaveChunks = _levelParams.Waves[_currentWaveIndex].Chunks;
+            var index = Random.Range(0, currentWaveChunks.Count);
+            var chunkParams = currentWaveChunks.ElementAt(index);
+            return chunkParams;
         }
 
         public void Update()

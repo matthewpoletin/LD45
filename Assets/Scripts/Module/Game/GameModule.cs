@@ -26,7 +26,6 @@ namespace Module.Game
 
         #endregion
 
-        public GameParams GameParams => gameParams;
         public GameObjectPool GameObjectPool => gameObjectPool;
         public LevelManager LevelManager => levelManager;
 
@@ -40,9 +39,7 @@ namespace Module.Game
             gameObjectPool.Init();
 
             // initialize level
-            levelManager.Init();
-
-            levelManager.CreateLevel();
+            levelManager.Init(gameParams.Levels[0]);
         }
     }
 }
