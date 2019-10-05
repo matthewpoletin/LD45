@@ -1,3 +1,4 @@
+using Module.Game.Level;
 using UnityEngine;
 using Utils;
 
@@ -29,10 +30,19 @@ namespace Module.Game
 
         [SerializeField] private GameObjectPool gameObjectPool;
 
+        [SerializeField] private LevelManager levelManager;
+
+        public GameObjectPool GameObjectPool => gameObjectPool;
+
         private void Init()
         {
+            // initialize subsystems
             gameObjectPool.Init();
-            // FIXME: put initialization for subsystems here
+
+            // initialize level
+            levelManager.Init();
+
+            levelManager.CreateLevel();
         }
     }
 }

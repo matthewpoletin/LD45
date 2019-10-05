@@ -15,7 +15,7 @@ namespace Utils
             _utilizationContainer = utilizationContainer != null ? utilizationContainer : gameObject.transform;
         }
 
-        public GameObject GetObject(GameObject prefab, Transform container)
+        public GameObject GetObject(GameObject prefab, Transform container = null)
         {
             // find object if exists
             var poolGameObject = _pool.FirstOrDefault(item => item == prefab);
