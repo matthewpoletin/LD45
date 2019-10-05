@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2833a7ee8904f47923ac69843bbbcc6, type: 3}
+  m_Name: level_1_wave_4
+  m_EditorClassIdentifier: 
+  chunks:
+  - {fileID: 11400000, guid: 673a9d459ab334d01950299c4c5d6600, type: 2}
+  - {fileID: 11400000, guid: d5fe133f5ca2a45e680cfd52a7ca403c, type: 2}
+  completeConditionEnemies: 20
