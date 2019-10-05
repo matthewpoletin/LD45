@@ -6,7 +6,7 @@ namespace Nothing
     {
         public KeyCode[] upKeys     = new KeyCode[] { KeyCode.W, KeyCode.UpArrow };
         public KeyCode[] downKeys   = new KeyCode[] { KeyCode.S, KeyCode.DownArrow };
-        public KeyCode[] leftKeys   = new KeyCode[] { KeyCode.A, KeyCode.LeftAlt };
+        public KeyCode[] leftKeys   = new KeyCode[] { KeyCode.A, KeyCode.LeftArrow };
         public KeyCode[] rightKeys  = new KeyCode[] { KeyCode.D, KeyCode.RightArrow };
 
         public KeyCode[] jumpKeys   = new KeyCode[] { KeyCode.Space };
