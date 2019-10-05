@@ -15,3 +15,4 @@ MonoBehaviour:
   obstacleGroups:
   - {fileID: 5907795885956771612, guid: f5e6a145d67be7d479505a38df68f71a, type: 3}
   - {fileID: 4393407298024630558, guid: c7f40f05e657d7c4caa002832ba3e28b, type: 3}
+  - {fileID: 7973678075130448921, guid: 96de809a73a6ae94380848f6417f4add, type: 3}
