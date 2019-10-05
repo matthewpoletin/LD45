@@ -22,14 +22,21 @@ namespace Nothing
         [field: SerializeField, HideInInspector]
         public bool IsChangingLine { get; private set; } = false;
         [field: SerializeField, HideInInspector]
+        public bool IsJumping { get; private set; } = false;
+        [field: SerializeField, HideInInspector]
         public Weapon Weapon { get; set; }
 
         public float lineWidth = 3;
         public Weapon defaultWeapon;
         public float lineChangeDuration = 1;
+        public float jumpVelocity = 10;
+        public float gravity = 9.8f;
 
         [SerializeField, HideInInspector]
         private float currentVelocity = 0;
+
+        [SerializeField, HideInInspector]
+        private float velocityY = 0;
 
         private void Awake()
         {
@@ -46,6 +53,12 @@ namespace Nothing
 
         public void Jump()
         {
+            if (IsJumping)
+                return;
+
+            IsJumping = true;
+
+            velocityY = jumpVelocity;
         }
 
         public void Left()
@@ -90,6 +103,9 @@ namespace Nothing
         {
             if (IsChangingLine)
                 UpdateLinePosition();
+
+            if (IsJumping)
+                UpdateYPosition();
         }
 
 
@@ -114,6 +130,20 @@ namespace Nothing
             }
 
             transform.localPosition = new Vector3(newX, transform.localPosition.y, transform.localPosition.z);
+        }
+
+        private void UpdateYPosition()
+        {
+            velocityY -= gravity;
+            var newY = transform.localPosition.y + Time.deltaTime * velocityY;
+
+            if (newY < 0)
+            {
+                IsJumping = false;
+                newY = 0;
+            }
+
+            transform.position = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
         }
     }
 }
