@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utils;
 
 namespace Module.Game
 {
@@ -24,10 +25,13 @@ namespace Module.Game
 
         #endregion
 
-        [SerializeField] private GameParams GameParams;
+        [SerializeField] private GameParams gameParams;
+
+        [SerializeField] private GameObjectPool gameObjectPool;
 
         private void Init()
         {
+            gameObjectPool.Init();
             // FIXME: put initialization for subsystems here
         }
     }
