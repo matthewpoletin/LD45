@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Utils
     {
         private Transform _utilizationContainer;
 
-        private static List<GameObject> _pool = new List<GameObject>();
+        private static List<Tuple<GameObject, GameObject>> _pool = new List<Tuple<GameObject, GameObject>>();
 
         public void Init(Transform utilizationContainer = null)
         {
@@ -19,11 +20,13 @@ namespace Utils
             // find object if exists
             foreach (var item in _pool)
             {
-                if (!item.activeInHierarchy && item.transform.parent == _utilizationContainer)
+                var itemPrefab = item.Item1;
+                var itemGameObject = item.Item2;
+                if (!itemGameObject.activeInHierarchy && itemGameObject.transform.parent == _utilizationContainer && itemPrefab == prefab)
                 {
-                    item.SetActive(true);
-                    item.transform.parent = container;
-                    return item;
+                    itemGameObject.SetActive(true);
+                    itemGameObject.transform.parent = container;
+                    return itemGameObject;
                 }
             }
 
@@ -34,7 +37,7 @@ namespace Utils
         public GameObject AddObject(GameObject prefab, Transform container)
         {
             var instance = Instantiate(prefab, container);
-            _pool.Add(instance);
+            _pool.Add(Tuple.Create(prefab, instance));
             return instance;
         }
 
