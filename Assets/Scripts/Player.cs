@@ -19,8 +19,13 @@ namespace Nothing
         public Line CurrentLine { get; private set; } = Line.Middle;
         [field: SerializeField, HideInInspector]
         public bool IsChangingLine { get; private set; } = false;
+        [field: SerializeField, HideInInspector]
+        public int Money { get; set; } = 0;
+        [field: SerializeField, HideInInspector]
+        public Weapon Weapon { get; set; }
 
         public float lineWidth = 3;
+        public Weapon defaultWeapon;
         public float lineChangeDuration = 1;
 
         [SerializeField, HideInInspector]
@@ -31,6 +36,7 @@ namespace Nothing
         private void Awake()
         {
             input.controllable = this;
+            Weapon = defaultWeapon;
         }
 
         public void Up()
@@ -82,6 +88,7 @@ namespace Nothing
             if (IsChangingLine)
                 UpdateLinePosition();
         }
+
 
         private bool ApproxEqual(float a, float b, float tolerance) => Mathf.Abs(a - b) < tolerance;
 
