@@ -26,7 +26,7 @@ namespace Module.Game.Level
     {
         private const float CHUNK_LENGTH = 20.0f;
 
-        private float _currentLevelMovementSpeed = 0.5f;
+        private float _currentLevelMovementSpeed = 15f;
 
         public float CurrentLevelMovementSpeed => Mathf.Max(0f, _currentLevelMovementSpeed);
 
@@ -88,23 +88,29 @@ namespace Module.Game.Level
             var movementDelta = -1f * CurrentLevelMovementSpeed * chunksContainer.transform.forward;
             foreach (var chunkData in _chunks)
             {
-                chunkData.GameObject.transform.position += movementDelta;
+                chunkData.GameObject.transform.position += movementDelta * Time.deltaTime;
             }
 
             // remove old chunks
-            var firstChunk = _chunks[0];
-            var firstChunkStartPositionZ = firstChunk.StartPositionZ;
-            if (firstChunkStartPositionZ < chunksContainer.position.z - 100f)
+            if (_chunks.Count != 0)
             {
-                _chunks.RemoveAt(0);
-                GameModule.Instance.GameObjectPool.UtilizeObject(firstChunk.GameObject);
+                var firstChunk = _chunks[0];
+                var firstChunkStartPositionZ = firstChunk.StartPositionZ;
+                if (firstChunkStartPositionZ < chunksContainer.position.z - 100f)
+                {
+                    _chunks.RemoveAt(0);
+                    GameModule.Instance.GameObjectPool.UtilizeObject(firstChunk.GameObject);
+                }
             }
 
             // add more chunks
-            var lastChunkEndPositionZ = _chunks[_chunks.Count - 1].EndPositionZ;
-            if (lastChunkEndPositionZ < chunksContainer.position.z + 100f)
+            if (_chunks.Count != 0)
             {
-                CreateChunk();
+                var lastChunkEndPositionZ = _chunks[_chunks.Count - 1].EndPositionZ;
+                if (lastChunkEndPositionZ < chunksContainer.position.z + 100f)
+                {
+                    CreateChunk();
+                }
             }
         }
     }
