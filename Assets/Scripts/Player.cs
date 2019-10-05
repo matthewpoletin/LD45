@@ -15,14 +15,15 @@ namespace Nothing
 
     public class Player : MonoBehaviour, IPlayerControllable
     {
-        public Line currentLine = Line.Middle;
+        [field: SerializeField, HideInInspector]
+        public Line CurrentLine { get; private set; } = Line.Middle;
+        [field: SerializeField, HideInInspector]
+        public bool IsChangingLine { get; private set; } = false;
+
         public float lineWidth = 3;
         public float lineChangeDuration = 1;
 
-        [field: SerializeField]
-        public bool IsChangingLine { get; private set; } = false;
-
-        [SerializeField]
+        [SerializeField, HideInInspector]
         private float currentVelocity = 0;
 
         public PlayerInput input;
@@ -46,26 +47,26 @@ namespace Nothing
 
         public void Left()
         {
-            if (currentLine == Line.Left)
+            if (CurrentLine == Line.Left)
                 return;
 
-            if (currentLine == Line.Middle)
-                currentLine = Line.Left;
-            else if (currentLine == Line.Right)
-                currentLine = Line.Middle;
+            if (CurrentLine == Line.Middle)
+                CurrentLine = Line.Left;
+            else if (CurrentLine == Line.Right)
+                CurrentLine = Line.Middle;
 
             OnLineChange();
         }
 
         public void Right()
         {
-            if (currentLine == Line.Right)
+            if (CurrentLine == Line.Right)
                 return;
 
-            if (currentLine == Line.Middle)
-                currentLine = Line.Right;
-            else if (currentLine == Line.Left)
-                currentLine = Line.Middle;
+            if (CurrentLine == Line.Middle)
+                CurrentLine = Line.Right;
+            else if (CurrentLine == Line.Left)
+                CurrentLine = Line.Middle;
 
             OnLineChange();
         }
@@ -86,9 +87,9 @@ namespace Nothing
 
         private void UpdateLinePosition()
         {
-            var targetX = currentLine == Line.Left ? -lineWidth :
-                        currentLine == Line.Middle ? 0 :
-                        currentLine == Line.Right ? lineWidth : 0;
+            var targetX = CurrentLine == Line.Left ? -lineWidth :
+                        CurrentLine == Line.Middle ? 0 :
+                        CurrentLine == Line.Right ? lineWidth : 0;
 
             var newX = Mathf.SmoothDamp(transform.localPosition.x, targetX, ref currentVelocity, lineChangeDuration);
 
