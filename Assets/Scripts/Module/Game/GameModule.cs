@@ -26,19 +26,23 @@ namespace Module.Game
 
         #endregion
 
-        [field: SerializeField, HideInInspector] public GameParams GameParams { get; private set; }
-        [field: SerializeField, HideInInspector] public GameObjectPool GameObjectPool { get; private set; }
-        [field: SerializeField, HideInInspector] public LevelManager LevelManager { get; private set; }
+        public GameParams GameParams => gameParams;
+        public GameObjectPool GameObjectPool => gameObjectPool;
+        public LevelManager LevelManager => levelManager;
+
+        [SerializeField] private GameParams gameParams;
+        [SerializeField] private GameObjectPool gameObjectPool;
+        [SerializeField] private LevelManager levelManager;
 
         private void Init()
         {
             // initialize subsystems
-            GameObjectPool.Init();
+            gameObjectPool.Init();
 
             // initialize level
-            LevelManager.Init();
+            levelManager.Init();
 
-            LevelManager.CreateLevel();
+            levelManager.CreateLevel();
         }
     }
 }
