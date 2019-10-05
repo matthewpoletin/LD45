@@ -6,14 +6,14 @@ namespace Nothing
 {
     public class ObstacleSpawner : MonoBehaviour
     {
-        public Obstacles obstacles;
+        public ObstacleGroups obstacleGroups;
         public float spawnPauseMin = 1;
         public float spawnPauseMax = 2;
 
 
         public GameObject GetNextObstacle()
         {
-            var prefab = obstacles.obstacles[Random.Range(0, obstacles.obstacles.Count)];
+            var prefab = obstacleGroups.obstacleGroups[Random.Range(0, obstacleGroups.obstacleGroups.Count)];
             var go = GameModule.Instance.GameObjectPool.GetObject(prefab, transform);
             return go;
         }

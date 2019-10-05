@@ -557,7 +557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7863d3efd21d499db431b0db994d0e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevelMovemnetSpeed: 15
   chunksContainer: {fileID: 677683347}
 --- !u!1 &1320603126
 GameObject:
@@ -662,7 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b9592212c937143906b4f560ffe56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacles: {fileID: 11400000, guid: 9368955e49fbed84881d77b1b2381b9d, type: 2}
+  obstacleGroups: {fileID: 11400000, guid: 9368955e49fbed84881d77b1b2381b9d, type: 2}
   spawnPauseMin: 1
   spawnPauseMax: 2
 --- !u!4 &1973671181
