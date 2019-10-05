@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 2462895045439441528, guid: 05a6ff5a8a60046848cd0b639e71edba,
     type: 3}
-  chunkLength: 20
+  chunkLength: 30
