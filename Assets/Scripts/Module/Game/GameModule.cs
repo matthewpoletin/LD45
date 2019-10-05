@@ -30,9 +30,9 @@ namespace Module.Game
         public GameObjectPool GameObjectPool => gameObjectPool;
         public LevelManager LevelManager => levelManager;
 
-        [SerializeField] private GameParams gameParams;
-        [SerializeField] private GameObjectPool gameObjectPool;
-        [SerializeField] private LevelManager levelManager;
+        [SerializeField] private GameParams gameParams = null;
+        [SerializeField] private GameObjectPool gameObjectPool = null;
+        [SerializeField] private LevelManager levelManager = null;
 
         private void Init()
         {
