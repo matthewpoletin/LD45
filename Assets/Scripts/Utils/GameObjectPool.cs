@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Utils
@@ -18,21 +17,29 @@ namespace Utils
         public GameObject GetObject(GameObject prefab, Transform container = null)
         {
             // find object if exists
-            var poolGameObject = _pool.FirstOrDefault(item => item == prefab);
-            if (poolGameObject != default(GameObject))
+            foreach (var item in _pool)
             {
-                _pool.Remove(poolGameObject);
-                poolGameObject.SetActive(true);
-                return poolGameObject;
+                if (!item.activeInHierarchy && item.transform.parent == _utilizationContainer)
+                {
+                    item.SetActive(true);
+                    item.transform.parent = container;
+                    return item;
+                }
             }
 
             // create object if object not found
-            return Instantiate(prefab, container);
+            return AddObject(prefab, container);
+        }
+
+        public GameObject AddObject(GameObject prefab, Transform container)
+        {
+            var instance = Instantiate(prefab, container);
+            _pool.Add(instance);
+            return instance;
         }
 
         public void UtilizeObject(GameObject utilizedGameObject)
         {
-            _pool.Add(utilizedGameObject);
             utilizedGameObject.gameObject.SetActive(false);
             utilizedGameObject.transform.parent = _utilizationContainer;
         }
