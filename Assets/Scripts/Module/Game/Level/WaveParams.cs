@@ -7,9 +7,11 @@ namespace Module.Game.Level
     public class WaveParams : ScriptableObject
     {
         [SerializeField] private List<ChunkParams> chunks = null;
+        [SerializeField] private float movementSpeed = 0;
         [SerializeField] private int completeConditionEnemies = 0;
 
         public List<ChunkParams> Chunks => chunks;
+        public float MovementSpeed => movementSpeed;
         public int CompleConditionEnemies => completeConditionEnemies;
     }
 }
