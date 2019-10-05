@@ -24,6 +24,8 @@ namespace Nothing
         [field: SerializeField, HideInInspector]
         public bool IsJumping { get; private set; } = false;
         [field: SerializeField, HideInInspector]
+        public int Lives { get; set; } = 3;
+        [field: SerializeField, HideInInspector]
         public Weapon Weapon { get; set; }
 
         public float lineWidth = 3;
