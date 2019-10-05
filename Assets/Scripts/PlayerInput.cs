@@ -11,29 +11,29 @@ namespace Nothing
 
         public KeyCode[] jumpKeys   = new KeyCode[] { KeyCode.Space };
 
-        public IPlayerControllable controllable;
+        public Player player;
 
         private void Update()
         {
             foreach(var key in upKeys)
                 if (Input.GetKeyDown(key))
-                    controllable.Up();
+                    player.Up();
 
             foreach (var key in downKeys)
                 if (Input.GetKeyDown(key))
-                    controllable.Down();
+                    player.Down();
 
             foreach (var key in leftKeys)
                 if (Input.GetKeyDown(key))
-                    controllable.Left();
+                    player.Left();
 
             foreach (var key in rightKeys)
                 if (Input.GetKeyDown(key))
-                    controllable.Right();
+                    player.Right();
 
             foreach (var key in jumpKeys)
                 if (Input.GetKeyDown(key))
-                    controllable.Jump();
+                    player.Jump();
         }
     }
 }

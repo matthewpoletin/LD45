@@ -13,10 +13,12 @@ namespace Nothing
         Right
     }
 
-    public class Player : MonoBehaviour, IPlayerControllable
+    public class Player : MonoBehaviour
     {
         [field: SerializeField, HideInInspector]
         public Line CurrentLine { get; private set; } = Line.Middle;
+        [field: SerializeField, HideInInspector]
+        public Line TargetLine { get; private set; } = Line.Middle;
         [field: SerializeField, HideInInspector]
         public bool IsChangingLine { get; private set; } = false;
         [field: SerializeField, HideInInspector]
@@ -31,11 +33,8 @@ namespace Nothing
         [SerializeField, HideInInspector]
         private float currentVelocity = 0;
 
-        public PlayerInput input;
-
         private void Awake()
         {
-            input.controllable = this;
             Weapon = defaultWeapon;
         }
 
@@ -53,26 +52,32 @@ namespace Nothing
 
         public void Left()
         {
-            if (CurrentLine == Line.Left)
+            if (CurrentLine != TargetLine)
                 return;
 
-            if (CurrentLine == Line.Middle)
-                CurrentLine = Line.Left;
-            else if (CurrentLine == Line.Right)
-                CurrentLine = Line.Middle;
+            if (TargetLine == Line.Left)
+                return;
+
+            if (TargetLine == Line.Middle)
+                TargetLine = Line.Left;
+            else if (TargetLine == Line.Right)
+                TargetLine = Line.Middle;
 
             OnLineChange();
         }
 
         public void Right()
         {
-            if (CurrentLine == Line.Right)
+            if (CurrentLine != TargetLine)
                 return;
 
-            if (CurrentLine == Line.Middle)
-                CurrentLine = Line.Right;
-            else if (CurrentLine == Line.Left)
-                CurrentLine = Line.Middle;
+            if (TargetLine == Line.Right)
+                return;
+
+            if (TargetLine == Line.Middle)
+                TargetLine = Line.Right;
+            else if (TargetLine == Line.Left)
+                TargetLine = Line.Middle;
 
             OnLineChange();
         }
@@ -94,11 +99,15 @@ namespace Nothing
 
         private void UpdateLinePosition()
         {
-            var targetX = CurrentLine == Line.Left ? -lineWidth :
-                        CurrentLine == Line.Middle ? 0 :
-                        CurrentLine == Line.Right ? lineWidth : 0;
+            var targetX = TargetLine == Line.Left ? -lineWidth :
+                        TargetLine == Line.Middle ? 0 :
+                        TargetLine == Line.Right ? lineWidth : 0;
 
             var newX = Mathf.SmoothDamp(transform.localPosition.x, targetX, ref currentVelocity, lineChangeDuration);
+
+            if (Mathf.Abs(transform.localPosition.x - targetX) < lineWidth / 2f)
+                CurrentLine = TargetLine;
+
 
             if (ApproxEqual(transform.localPosition.x, targetX, .01f))
             {
