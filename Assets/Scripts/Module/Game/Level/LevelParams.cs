@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Module.Game.Level
 {
     [CreateAssetMenu(fileName = "New Level Params", menuName = "Params/LevelParams", order = 5)]
     public class LevelParams : ScriptableObject
     {
-        [SerializeField] private List<WaveParams> waves = null;
+        [FormerlySerializedAs("waves")] [SerializeField] private List<PhaseParams> phases = null;
 
-        public List<WaveParams> Waves => waves;
+        public List<PhaseParams> Phases => phases;
     }
 }

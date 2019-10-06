@@ -13,7 +13,7 @@ namespace Module.Game.Level
 
         private LevelParams _levelParams = null;
 
-        private int _currentWaveIndex = 0;
+        private int _currentPhaseIndex = 0;
 
         private ChunkController _chunksController = null;
 
@@ -21,15 +21,15 @@ namespace Module.Game.Level
         {
             _levelParams = levelParams;
 
-            _currentWaveIndex = 0;
+            _currentPhaseIndex = 0;
 
             _chunksController = new ChunkController(chunksContainer, _levelParams);
-            _chunksController.CurrentWaveIndex = _currentWaveIndex;
+            _chunksController.CurrentPhaseIndex = _currentPhaseIndex;
 
             // Load prefab resources
-            foreach (var waveParams in _levelParams.Waves)
+            foreach (var phaseParams in _levelParams.Phases)
             {
-                foreach (var chunkParams in waveParams.Chunks)
+                foreach (var chunkParams in phaseParams.Chunks)
                 {
                     // Add chunks to object pool
                 }
@@ -38,17 +38,17 @@ namespace Module.Game.Level
             _chunksController.CreateLevel();
         }
 
-        public void IncrementWave()
+        public void IncrementPhase()
         {
-            _currentWaveIndex += 1;
-            if (_currentWaveIndex > _levelParams.Waves.Count)
+            _currentPhaseIndex += 1;
+            if (_currentPhaseIndex > _levelParams.Phases.Count)
             {
                 // FIXME: Show win screen
                 return;
             }
 
-            _chunksController.CurrentWaveIndex = _currentWaveIndex;
-            _currentLevelMovementSpeed = _levelParams.Waves[_currentWaveIndex].MovementSpeed;
+            _chunksController.CurrentPhaseIndex = _currentPhaseIndex;
+            _currentLevelMovementSpeed = _levelParams.Phases[_currentPhaseIndex].MovementSpeed;
         }
 
         public void Update()

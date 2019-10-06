@@ -12,14 +12,14 @@ namespace Module.Game.Level.Chunk
 
         private Transform _chunksContainer = null;
 
-        private int _currentWaveIndex = 0;
+        private int _currentPhaseIndex = 0;
 
-        public int CurrentWaveIndex
+        public int CurrentPhaseIndex
         {
             set
             {
-                _currentWaveIndex = value;
-                _movementSpeed = _levelParams.Waves[_currentWaveIndex].MovementSpeed;
+                _currentPhaseIndex = value;
+                _movementSpeed = _levelParams.Phases[_currentPhaseIndex].MovementSpeed;
             }
         }
 
@@ -55,9 +55,9 @@ namespace Module.Game.Level.Chunk
 
         private ChunkParams GetRandomChunk()
         {
-            var currentWaveChunks = _levelParams.Waves[_currentWaveIndex].Chunks;
-            var index = Random.Range(0, currentWaveChunks.Count);
-            var chunkParams = currentWaveChunks.ElementAt(index);
+            var currentPhaseChunks = _levelParams.Phases[_currentPhaseIndex].Chunks;
+            var index = Random.Range(0, currentPhaseChunks.Count);
+            var chunkParams = currentPhaseChunks.ElementAt(index);
             return chunkParams;
         }
 

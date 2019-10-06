@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Module.Game.Level
 {
-    [CreateAssetMenu(fileName = "New Wave Params", menuName = "Params/WaveParams", order = 15)]
-    public class WaveParams : ScriptableObject
+    [CreateAssetMenu(fileName = "New Phase Params", menuName = "Params/PhaseParams", order = 15)]
+    public class PhaseParams : ScriptableObject
     {
         [SerializeField] private List<ChunkParams> chunks = null;
         [SerializeField] private float movementSpeed = 0;
