@@ -12,6 +12,8 @@ namespace Nothing
         public KeyCode[] jumpKeys   = new KeyCode[] { KeyCode.Space };
         public KeyCode[] attackKeys = new KeyCode[] { KeyCode.E, KeyCode.Mouse0 };
 
+        public KeyCode[] humiliateKeys = new KeyCode[] {KeyCode.B};
+
         public Player player;
 
         private void Update()
@@ -39,6 +41,10 @@ namespace Nothing
             foreach (var key in attackKeys)
                 if (Input.GetKey(key))
                     player.Attack();
+
+            foreach (var key in humiliateKeys)
+                if(Input.GetKeyDown(key))
+                    player.Humiliate();
         }
     }
 }

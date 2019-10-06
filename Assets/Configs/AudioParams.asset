@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf59f55bcf30d4d298360cfbe590a0b3, type: 3}
+  m_Name: AudioParams
+  m_EditorClassIdentifier: 
+  musicMixerGroup: {fileID: -2147513638784885060, guid: fd81ebf3690da47ba9448500b010fe35,
+    type: 2}
+  sfxMixerGroup: {fileID: 8368957603546619780, guid: fd81ebf3690da47ba9448500b010fe35,
+    type: 2}
+  musicClips:
+  - {fileID: 8300000, guid: fdd1770ac5b4c4c75b1542e56d7cd1ab, type: 3}
+  - {fileID: 8300000, guid: 24fc7a09258b64cc58dc9327494265af, type: 3}
+  - {fileID: 8300000, guid: 05f52e0e5f93942c4acfd48bc9c88a0e, type: 3}
+  - {fileID: 8300000, guid: 830f3fa0ac5314f99a3452f36f76c450, type: 3}
+  - {fileID: 8300000, guid: a634c129f42b9495cb68928e8b26f17e, type: 3}
+  - {fileID: 8300000, guid: e8a6584d024334b4484a9d53d5156aa5, type: 3}
+  - {fileID: 8300000, guid: 8efd8cb8a2c40454f826b69ffd1c56d8, type: 3}
+  sfxSounds:
+  - clip: {fileID: 8300000, guid: 3cebddb8a92764dbc9888316aa3adbc8, type: 3}
+    sfxType: 1
+  - clip: {fileID: 8300000, guid: 609465ace6f584eb2b90ea9fe491daeb, type: 3}
+    sfxType: 1
+  - clip: {fileID: 8300000, guid: b4376ad50132d4cd7b5eb2a5ef9d0e25, type: 3}
+    sfxType: 1
+  - clip: {fileID: 8300000, guid: 259dda4097f934cd196b51dd56f475bd, type: 3}
+    sfxType: 2
+  - clip: {fileID: 8300000, guid: 1dcc8d55540794368a1beaa155e0bbcb, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 8e47b3c8175664391bd2b4124d4b7563, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 7f4f19ddf7ab24ae59904c4adadbb373, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: d310204626cd64e95a9851edef4caab3, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 3d39b63ed392c492cb13bc667b22e101, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 42148195a8df74133ab4c1c3a6ecc107, type: 3}
+    sfxType: 3

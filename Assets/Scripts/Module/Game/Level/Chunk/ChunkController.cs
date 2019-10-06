@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using TimeSystem;
 using UnityEngine;
 
 namespace Module.Game.Level.Chunk
 {
-    public class ChunkController
+    public class ChunkController : ITick
     {
         private LevelParams _levelParams = null;
 

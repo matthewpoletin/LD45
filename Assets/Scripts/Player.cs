@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Module.Game;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -133,8 +134,11 @@ namespace Nothing
             OnLineChange();
         }
 
-
-        private void OnLineChange() {
+        public void Humiliate() {
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Humiliate);
+        }
+        private void OnLineChange()
+        {
             IsChangingLine = true;
         }
 

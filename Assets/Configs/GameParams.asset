@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: d0c323fb1cd674fecba7dafae224db93, type: 2}
+  audioParams: {fileID: 11400000, guid: f2501696c1ee54835a2876033f000be8, type: 2}
   lineWidth: 3

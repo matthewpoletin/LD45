@@ -18,5 +18,5 @@ MonoBehaviour:
   movementSpeed: 15
   phaseType: 0
   completeConditionEnemies: 0
-  completeConditionDuration: 40
+  completeConditionDuration: 5
   completeConditionBossHealth: 0
