@@ -1,8 +1,5 @@
 ﻿using Module.Game;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Module.Game;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using EventType = Module.Game.Events.EventType;
@@ -102,7 +99,7 @@ namespace Nothing
 
             velocityY = jumpVelocity;
 
-            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerJump, gameObject.transform);
+            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerJump, transform, transform.position);
         }
 
         public void Left() {
@@ -136,7 +133,7 @@ namespace Nothing
         }
 
         public void Humiliate() {
-            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerHumiliate);
+            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerHumiliate, transform, transform.position);
         }
         private void OnLineChange()
         {
@@ -192,7 +189,7 @@ namespace Nothing
         }
 
         private void OnDamageTaken(int amount) {
-            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerDamaged, gameObject.transform);
+            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerDamaged, transform, transform.position);
         }
     }
 }
