@@ -9,7 +9,7 @@ namespace Module.Game.Level.Obstacles
         private Transform _obstacleContainer = null;
 
         private const float SpawnPauseMin = 0.4f;
-        private const float SpawnPauseMax = 1.3f;
+        private const float SpawnPauseMax = 0.8f;
 
         private float _spawnCooldownTime = 0f;
 

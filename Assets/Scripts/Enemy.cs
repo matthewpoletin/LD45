@@ -28,7 +28,7 @@ namespace Nothing
         }
         
         public void OnTriggerEnter(Collider other) {
-            var obstacleGroup = other.gameObject.GetComponent<ObstacleGroup>();
+            var obstacleGroup = other.gameObject.GetComponent<Obstacle>();
 
             if (obstacleGroup != null && dieInColissionWithObstacles) {
                 health.Kill();

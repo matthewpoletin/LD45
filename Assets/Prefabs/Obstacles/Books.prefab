@@ -136,6 +136,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Books
       objectReference: {fileID: 0}
+    - target: {fileID: 4907007218599984013, guid: 28fc948212e81ba44906fe0df8258506,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907007218599984013, guid: 28fc948212e81ba44906fe0df8258506,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28fc948212e81ba44906fe0df8258506, type: 3}
 --- !u!4 &7739807755515183518 stripped
