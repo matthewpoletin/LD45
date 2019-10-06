@@ -33,4 +33,10 @@ public class Health : MonoBehaviour
     public void Damage(float amount) {
         Damage((int)Math.Ceiling(amount));
     }
+
+    public void Kill() {
+        CurrentHealth = 0;
+        OnDamageTaken(CurrentHealth);
+        OnHealthDepleated();
+    }
 }

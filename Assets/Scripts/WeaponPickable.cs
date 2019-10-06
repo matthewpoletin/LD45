@@ -4,9 +4,9 @@
 namespace Nothing
 {
     [RequireComponent(typeof(Collider))]
-    public class WeaponPickable : MonoBehaviour
+    public class WeaponPickable : LevelObject
     {
-        public Weapon weapon;
+        public WeaponType weaponType;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -15,7 +15,7 @@ namespace Nothing
             if (player is null)
                 return;
 
-            player.Weapon = weapon;
+            player.ChangeWeapon(weaponType);
 
             Destroy(gameObject);
         }

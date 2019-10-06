@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
-namespace Nothing
-{
-    public class Weapon : MonoBehaviour
-    {
-        
+namespace Nothing {
+    public abstract class Weapon : MonoBehaviour {
+        [field: SerializeField, HideInInspector]
+        public bool IsAttacking { get; protected set; } = false;
+
+        public abstract Task Attack();
     }
 }

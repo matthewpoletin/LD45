@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7669703014709296597}
   - component: {fileID: 6620208426608728142}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: EnemyProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4743406424302143761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33cf248a4777bca4fa757c1c5ba1bc60, type: 3}
+  m_Script: {fileID: 11500000, guid: e63389ce4e80c6e42806865106cfa0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 0
+  speed: 1.5
   damage: 1
+  ignoredLayerMask:
+    serializedVersion: 2
+    m_Bits: 512

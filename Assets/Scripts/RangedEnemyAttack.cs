@@ -3,12 +3,12 @@ using System.Collections;
 
 namespace Nothing
 {
-    public class RangedEnemyAttack : LevelObject
+    public class RangedEnemyAttack : MonoBehaviour
     {
         public float attackPause = 2;
-        public GameObject projectile;
+        public GameObject projectilePrefab;
 
-        private void Awake()
+        private void Start()
         {
             StartCoroutine(Shoot());
         }
@@ -17,7 +17,8 @@ namespace Nothing
         {
             while (true)
             {
-                Instantiate(projectile, transform);
+                var projectile = Instantiate(projectilePrefab, ProjectileHolder.Inst.transform);
+                projectile.transform.position = transform.position;
 
                 yield return new WaitForSeconds(attackPause);
             }

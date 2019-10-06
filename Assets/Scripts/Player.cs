@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Module.Game;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,20 @@ using UnityEngine.SceneManagement;
 
 namespace Nothing
 {
-    public enum Line
-    {
+    public enum Line {
         Left,
         Middle,
         Right
     }
 
-    public class Player : MonoBehaviour
-    {
+    public enum WeaponType {
+        None,
+        Melee,
+        Ranged,
+        Bazooka
+    }
+
+    public class Player : MonoBehaviour {
         [field: SerializeField, HideInInspector]
         public Line CurrentLine { get; private set; } = Line.Middle;
         [field: SerializeField, HideInInspector]
@@ -24,16 +30,19 @@ namespace Nothing
         [field: SerializeField, HideInInspector]
         public bool IsJumping { get; private set; } = false;
 
+
         [SerializeField]
-        private Health playerHealth;
-        
-        [SerializeField, HideInInspector]
-        private int lives = 3;
+        private Health playerHealth = null;
+
         [field: SerializeField, HideInInspector]
-        public Weapon Weapon { get; set; }
+        public Weapon CurrentWeapon { get; private set; } = null;
+
+        public MeleeWeapon meleeWeapon;
+        public RangedWeapon rangedWeapon;
+        public BazookaWeapon bazookaWeapon;
 
         public float lineWidth = 3;
-        public Weapon defaultWeapon;
+        public WeaponType defaultWeaponType;
         public float lineChangeDuration = 1;
         public float jumpVelocity = 10;
         public float gravity = 9.8f;
@@ -44,39 +53,57 @@ namespace Nothing
         [SerializeField, HideInInspector]
         private float velocityY = 0;
 
-        private void Awake()
-        {
-            Weapon = defaultWeapon;
+        private void Awake() {
+            ChangeWeapon(defaultWeaponType);
         }
 
         private void OnEnable() {
             playerHealth.OnHealthDepleated += OnHealthDepleated;
+            playerHealth.OnDamageTaken += OnDamageTaken;
         }
 
         private void OnDisable() {
             playerHealth.OnHealthDepleated -= OnHealthDepleated;
+            playerHealth.OnDamageTaken -= OnDamageTaken;
         }
 
-        public void Up()
-        {
+        public void Up() {
         }
 
-        public void Down()
-        {
+        public void Down() {
         }
 
-        public void Jump()
-        {
+        public void ChangeWeapon(WeaponType weaponType) {
+            if (CurrentWeapon != null) {
+                CurrentWeapon.gameObject.SetActive(false);
+            }
+
+            var weapons = new Dictionary<WeaponType, Weapon> {
+                { WeaponType.None, null },
+                { WeaponType.Melee, meleeWeapon },
+                { WeaponType.Ranged, rangedWeapon },
+                { WeaponType.Bazooka, bazookaWeapon }
+            };
+            CurrentWeapon = weapons[weaponType];
+            CurrentWeapon?.gameObject.SetActive(true);
+        }
+
+        public void Attack() {
+            CurrentWeapon?.Attack();
+        } 
+
+        public void Jump() {
             if (IsJumping)
                 return;
 
             IsJumping = true;
 
             velocityY = jumpVelocity;
+
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Jump);
         }
 
-        public void Left()
-        {
+        public void Left() {
             if (CurrentLine != TargetLine)
                 return;
 
@@ -91,8 +118,7 @@ namespace Nothing
             OnLineChange();
         }
 
-        public void Right()
-        {
+        public void Right() {
             if (CurrentLine != TargetLine)
                 return;
 
@@ -108,13 +134,11 @@ namespace Nothing
         }
 
 
-        private void OnLineChange()
-        {
+        private void OnLineChange() {
             IsChangingLine = true;
         }
 
-        public void Update()
-        {
+        public void Update() {
             if (IsChangingLine)
                 UpdateLinePosition();
 
@@ -125,8 +149,7 @@ namespace Nothing
 
         private bool ApproxEqual(float a, float b, float tolerance) => Mathf.Abs(a - b) < tolerance;
 
-        private void UpdateLinePosition()
-        {
+        private void UpdateLinePosition() {
             var targetX = TargetLine == Line.Left ? -lineWidth :
                         TargetLine == Line.Middle ? 0 :
                         TargetLine == Line.Right ? lineWidth : 0;
@@ -146,8 +169,7 @@ namespace Nothing
             transform.localPosition = new Vector3(newX, transform.localPosition.y, transform.localPosition.z);
         }
 
-        private void UpdateYPosition()
-        {
+        private void UpdateYPosition() {
             velocityY -= gravity;
             var newY = transform.localPosition.y + Time.deltaTime * velocityY;
 
@@ -160,8 +182,15 @@ namespace Nothing
             transform.position = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
         }
 
+        public void Humiliate() {
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Humiliate);
+        }
         private void OnHealthDepleated() {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private void OnDamageTaken(int amount) {
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Damaged);
         }
     }
 }

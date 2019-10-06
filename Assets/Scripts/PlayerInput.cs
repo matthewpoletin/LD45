@@ -10,6 +10,7 @@ namespace Nothing
         public KeyCode[] rightKeys  = new KeyCode[] { KeyCode.D, KeyCode.RightArrow };
 
         public KeyCode[] jumpKeys   = new KeyCode[] { KeyCode.Space };
+        public KeyCode[] attackKeys = new KeyCode[] { KeyCode.E, KeyCode.Mouse0 };
 
         public Player player;
 
@@ -34,6 +35,10 @@ namespace Nothing
             foreach (var key in jumpKeys)
                 if (Input.GetKeyDown(key))
                     player.Jump();
+
+            foreach (var key in attackKeys)
+                if (Input.GetKey(key))
+                    player.Attack();
         }
     }
 }
