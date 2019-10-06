@@ -9,11 +9,6 @@ namespace Module.Game.Boss
     {
         [SerializeField] private Animator bossAnimator;
 
-        private void Start()
-        {
-
-        }
-
         public void ShowBoss()
         {
             // bossAnimator.
@@ -21,12 +16,16 @@ namespace Module.Game.Boss
 
         public void AttackLeft()
         {
-
+            bossAnimator.SetTrigger("AttackLeft");
         }
 
         public void AttackRight()
         {
+            bossAnimator.SetTrigger("AttackRight");
+        }
 
+        public void Death() {
+            bossAnimator.SetTrigger("Death");
         }
     }
 }
