@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventType: 0
   clips:
-  - {fileID: 8300000, guid: 3cebddb8a92764dbc9888316aa3adbc8, type: 3}
-  - {fileID: 8300000, guid: 609465ace6f584eb2b90ea9fe491daeb, type: 3}
-  - {fileID: 8300000, guid: b4376ad50132d4cd7b5eb2a5ef9d0e25, type: 3}
+  - {fileID: 8300000, guid: 5426d45f565f145f98094e0ca72e5b99, type: 3}
+  - {fileID: 8300000, guid: 11479f4c10d5b412cbffb5971cfc505a, type: 3}
+  - {fileID: 8300000, guid: 1baa80b821adc4796bf215bb50614a9f, type: 3}
   vfx: {fileID: 0}
+  isBoss: 0

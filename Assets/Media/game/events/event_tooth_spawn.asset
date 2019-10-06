@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_tooth_spawn
   m_EditorClassIdentifier: 
-  eventType: 0
+  eventType: 4
   clips:
   - {fileID: 8300000, guid: 52cdd175c47404561b1258fd393fb488, type: 3}
   - {fileID: 8300000, guid: 78b123b3a9dae479dbe468839401ea7d, type: 3}
