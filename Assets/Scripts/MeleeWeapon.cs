@@ -9,7 +9,6 @@ using UnityEngine;
 namespace Nothing {
     public class MeleeWeapon : Weapon {
         public float useTime = .5f;
-        public int damage = 1;
         
         public Collider weaponCollider;
 
@@ -36,7 +35,7 @@ namespace Nothing {
             if (enemy is null)
                 return;
 
-            enemy.GetComponent<Health>().Damage(damage);
+            enemy.GetComponent<Health>().Kill();
         }
     }
 }

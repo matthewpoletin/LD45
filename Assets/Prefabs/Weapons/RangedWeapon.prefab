@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <IsAttacking>k__BackingField: 0
-  useTime: 0.5
+  useTime: 0.25
   damage: 1
   projectilePrefab: {fileID: 5075188954557931324, guid: ea4cf05da02248143890a4a76b96b718,
     type: 3}
-  projectileHolder: {fileID: 0}

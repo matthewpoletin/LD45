@@ -5,22 +5,20 @@ namespace Nothing
 {
     public class RangedEnemyAttack : MonoBehaviour
     {
-        public float attackPause = 2;
+        public float attackPauseMin =1.7f;
+        public float attackPauseMax = 2.3f;
         public GameObject projectilePrefab;
 
-        private void Start()
-        {
+        private void Start() {
             StartCoroutine(Shoot());
         }
 
-        private IEnumerator Shoot()
-        {
-            while (true)
-            {
+        private IEnumerator Shoot() {
+            while (true) {
                 var projectile = Instantiate(projectilePrefab, ProjectileHolder.Inst.transform);
                 projectile.transform.position = transform.position;
 
-                yield return new WaitForSeconds(attackPause);
+                yield return new WaitForSeconds(Random.Range(attackPauseMin, attackPauseMax));
             }
         }
     }

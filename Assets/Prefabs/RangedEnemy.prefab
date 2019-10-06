@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a0bf96de97dc48b66f83497039ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPause: 4
+  attackPause: 5
   projectilePrefab: {fileID: 4743406424302143761, guid: 34233c92b1b678a4c9a99633d1df96ae,
     type: 3}
 --- !u!114 &1506796092891894434
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67538f0cfa72840558c8e2413b2833de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 1
+  totalHealth: 3
 --- !u!54 &-4497907689671874588
 Rigidbody:
   m_ObjectHideFlags: 0
