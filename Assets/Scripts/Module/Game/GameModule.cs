@@ -48,6 +48,8 @@ namespace Module.Game
             levelManager.Init(gameParams.Levels[0]);
             levelManager.StartLevel();
 
+            uiManager.Init();
+
             soundManager.Init(gameParams.AudioParams);
 
             levelManager.OnPhaseLevelChange += uiManager.UpdateProgress;
