@@ -17,9 +17,16 @@ namespace Nothing
         }
 
         public void OnTriggerEnter(Collider other) {
+            var obstacleGroup = other.gameObject.GetComponent<ObstacleGroup>();
+
+            if (obstacleGroup != null) {
+                health.Kill();
+                return;
+            }
+
             var player = other.gameObject.GetComponent<Player>();
 
-            if (player is null)
+            if (player == null)
                 return;
 
             player.GetComponent<Health>().Damage(damage);

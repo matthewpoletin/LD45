@@ -2,24 +2,19 @@
 using System.Collections;
 using Module.Game;
 
-namespace Nothing
-{
-    public class EnemySpawner : MonoBehaviour
-    {
+namespace Nothing {
+    public class EnemySpawner : MonoBehaviour {
         public float spawnPauseMin = 1;
         public float spawnPauseMax = 2;
         public GameObject enemy;
 
 
-        private void Start()
-        {
+        private void Start() {
             StartCoroutine(SpawnEnemies());
         }
 
-        private IEnumerator SpawnEnemies()
-        {
-            while (true)
-            {
+        private IEnumerator SpawnEnemies() {
+            while (true) {
                 var go = Instantiate(enemy, transform);
 
                 var row = Random.Range(-1, 2);
