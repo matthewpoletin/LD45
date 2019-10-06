@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Module.Game;
+using Module.Game.Level.Obstacles;
 
 namespace Nothing
 {
@@ -15,7 +17,14 @@ namespace Nothing
 
         private void Start() {
             health = GetComponent<Health>();
-            health.OnHealthDepleated = () => Destroy(gameObject);
+
+            health.OnHealthDepleated += OnEnemyDestroyed;
+        }
+
+        void OnEnemyDestroyed()
+        {
+            GameModule.Instance.LevelManager.EnemiesKilledCounter++;
+            Destroy(gameObject);
         }
         
         public void OnTriggerEnter(Collider other) {

@@ -9,12 +9,12 @@ namespace Module.Game
     {
         [SerializeField] private AudioMixerGroup musicMixerGroup = null;
         [SerializeField] private AudioMixerGroup sfxMixerGroup = null;
+        [SerializeField] private AudioMixerGroup tongueMixerGroup = null;
         [SerializeField] private List<AudioClip> musicClips = null;
-//        [SerializeField] private SfxSound[] sfxSounds;
 
         public List<AudioClip> MusicClips => musicClips;
         public AudioMixerGroup MusicMixerGroup => musicMixerGroup;
         public AudioMixerGroup SfxMixerGroup => sfxMixerGroup;
-//        public SfxSound[] SfxSounds => sfxSounds;
+        public AudioMixerGroup TongueMixerGroup => tongueMixerGroup;
     }
 }

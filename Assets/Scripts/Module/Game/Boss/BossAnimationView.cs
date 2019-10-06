@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EventType = Module.Game.Events.EventType;
 
 
 namespace Module.Game.Boss
@@ -11,7 +12,7 @@ namespace Module.Game.Boss
 
         public void ShowBoss()
         {
-            // bossAnimator.
+             GameModule.Instance.EventManager.ProcessEvent(EventType.TongueSpawn);
         }
 
         public void AttackLeft()
@@ -26,6 +27,18 @@ namespace Module.Game.Boss
 
         public void Death() {
             bossAnimator.SetTrigger("Death");
+        }
+
+        public void AttackTrigger() {
+            GameModule.Instance.EventManager.ProcessEvent(EventType.TongueAttack);
+        }
+
+        public void PreAttackTrigger() {
+            GameModule.Instance.EventManager.ProcessEvent(EventType.TongueAim);
+        }
+
+        public void DeathTrigger() {
+            GameModule.Instance.EventManager.ProcessEvent(EventType.TongueDeath);
         }
     }
 }

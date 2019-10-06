@@ -15,4 +15,4 @@ MonoBehaviour:
   eventType: 2
   clips:
   - {fileID: 8300000, guid: 259dda4097f934cd196b51dd56f475bd, type: 3}
-  vfx: {fileID: 0}
+  vfx: {fileID: 11400000, guid: ca153aa7950aa416cadd972d59c01db5, type: 2}

@@ -46,7 +46,10 @@ namespace Module.Game.Events
 
             if (eventParams.Clips != null || eventParams.Clips.Count != 0)
             {
-                _soundManager.PlaySfx(eventParams.Clips);
+                if (eventParams.IsBoss)
+                    _soundManager.PlayBossSfx(eventParams.Clips);
+                else
+                    _soundManager.PlaySfx(eventParams.Clips);
             }
 
             if (eventParams.Vfx != null)
