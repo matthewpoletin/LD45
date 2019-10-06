@@ -185,10 +185,7 @@ namespace Nothing
 
             transform.position = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
         }
-
-        public void Humiliate() {
-            GameModule.Instance.SoundManager.PlaySfx(SfxType.Humiliate);
-        }
+        
         private void OnHealthDepleated() {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
