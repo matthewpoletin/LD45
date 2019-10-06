@@ -7,7 +7,8 @@ namespace Nothing {
     [System.Flags]
     public enum EnemyType {
         Melee = 1,
-        Ranged = 2
+        Ranged = 2,
+        Teeth = 4
     }
 
     public class EnemySpawner : MonoBehaviour {
