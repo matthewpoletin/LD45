@@ -1,5 +1,8 @@
-namespace Module.Game.Level.Chunk
+using System;
+
+namespace Module.Game.Level.Phase
 {
+    [Serializable]
     public enum PhaseType
     {
         Timeout = 0,

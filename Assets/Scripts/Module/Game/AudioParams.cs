@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -9,13 +8,13 @@ namespace Module.Game
     public class AudioParams : ScriptableObject
     {
         [SerializeField] private AudioMixerGroup musicMixerGroup = null;
-        public AudioMixerGroup MusicMixerGroup => musicMixerGroup;
         [SerializeField] private AudioMixerGroup sfxMixerGroup = null;
-        public AudioMixerGroup SfxMixerGroup => sfxMixerGroup;
+        [SerializeField] private List<AudioClip> musicClips = null;
+//        [SerializeField] private SfxSound[] sfxSounds;
 
-        [SerializeField] private AudioClip[] musicClips;
-        public AudioClip[] MusicClips => musicClips;
-        [SerializeField] private SfxSound[] sfxSounds;
-        public SfxSound[] SfxSounds => sfxSounds;
+        public List<AudioClip> MusicClips => musicClips;
+        public AudioMixerGroup MusicMixerGroup => musicMixerGroup;
+        public AudioMixerGroup SfxMixerGroup => sfxMixerGroup;
+//        public SfxSound[] SfxSounds => sfxSounds;
     }
 }

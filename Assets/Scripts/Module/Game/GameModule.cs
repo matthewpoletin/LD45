@@ -1,3 +1,6 @@
+using Module.Audio;
+using Module.Effects;
+using Module.Game.Events;
 using Module.Game.Level;
 using Nothing;
 using UnityEngine;
@@ -39,6 +42,11 @@ namespace Module.Game
         public UIManager UiManager => uiManager;
         public SoundManager SoundManager => soundManager;
 
+        private VfxController _vfxController = null;
+        private EventManager _eventManager = null;
+
+        public EventManager EventManager => _eventManager;
+
         private void Init()
         {
             // initialize subsystems
@@ -51,6 +59,8 @@ namespace Module.Game
             uiManager.Init();
 
             soundManager.Init(gameParams.AudioParams);
+            _vfxController = new VfxController();
+            _eventManager = new EventManager(soundManager, _vfxController, GameParams.Events);
 
             levelManager.OnPhaseLevelChange += uiManager.UpdateProgress;
             levelManager.OnPhaseCompletion += soundManager.ChangeMusicPhase;
