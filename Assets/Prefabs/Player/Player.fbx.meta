@@ -1,20 +1,34 @@
 fileFormatVersion: 2
-guid: f69696ac4468e41639e872944fc4e5fa
+guid: fbf952be89cc6544796f3958ba6528af
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: 1409404963710248135
-    second: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+    second: Sword
   - first:
       74: -8721050191592914793
-    second: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Open_S"
+    second: Start_Game
+  - first:
+      74: 6145234775231182873
+    second: Gun
+  - first:
+      74: -4821811433660909032
+    second: Gun
+  - first:
+      74: -6871152109257485581
+    second: Shot
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 10ce5da97a7bc4196a881eda29100a4b, type: 2}
+      name: GUN
+    second: {fileID: 2100000, guid: a3de56958ba086d40adef1847bc5bcd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Player
+    second: {fileID: 2100000, guid: 4902eaf6016539c4783ddb546e7fa799, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,7 +57,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      name: Sword
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
       internalID: 1409404963710248135
       firstFrame: 10
@@ -72,11 +86,69 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Open_S"
+      name: Start_Game
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Open_S"
       internalID: -8721050191592914793
       firstFrame: 0
-      lastFrame: 70
+      lastFrame: 168
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Gun
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: -4821811433660909032
+      firstFrame: 110
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shot
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: -6871152109257485581
+      firstFrame: 170
+      lastFrame: 179
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -103,7 +175,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -149,7 +221,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
