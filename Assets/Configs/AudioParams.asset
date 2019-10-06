@@ -16,5 +16,20 @@ MonoBehaviour:
     type: 2}
   sfxMixerGroup: {fileID: 8368957603546619780, guid: fd81ebf3690da47ba9448500b010fe35,
     type: 2}
-  musicClips: []
-  sfxSounds: []
+  musicClips:
+  - {fileID: 8300000, guid: fdd1770ac5b4c4c75b1542e56d7cd1ab, type: 3}
+  - {fileID: 8300000, guid: 24fc7a09258b64cc58dc9327494265af, type: 3}
+  - {fileID: 8300000, guid: 05f52e0e5f93942c4acfd48bc9c88a0e, type: 3}
+  - {fileID: 8300000, guid: 830f3fa0ac5314f99a3452f36f76c450, type: 3}
+  - {fileID: 8300000, guid: a634c129f42b9495cb68928e8b26f17e, type: 3}
+  - {fileID: 8300000, guid: e8a6584d024334b4484a9d53d5156aa5, type: 3}
+  - {fileID: 8300000, guid: 8efd8cb8a2c40454f826b69ffd1c56d8, type: 3}
+  sfxSounds:
+  - clip: {fileID: 8300000, guid: 3cebddb8a92764dbc9888316aa3adbc8, type: 3}
+    sfxType: 1
+  - clip: {fileID: 8300000, guid: 609465ace6f584eb2b90ea9fe491daeb, type: 3}
+    sfxType: 1
+  - clip: {fileID: 8300000, guid: b4376ad50132d4cd7b5eb2a5ef9d0e25, type: 3}
+    sfxType: 1
+  - clip: {fileID: 8300000, guid: 259dda4097f934cd196b51dd56f475bd, type: 3}
+    sfxType: 2
