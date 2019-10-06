@@ -9,7 +9,7 @@ namespace Module.Game.Events
     {
         private SoundManager _soundManager = null;
         private VfxController _vfxController = null;
-        private Dictionary<EventType, EventParams> _events = new Dictionary<EventType, EventParams>();
+        private Dictionary<EventType, List<EventParams>> _events = new Dictionary<EventType, List<EventParams>>();
 
         public EventManager(SoundManager soundManager, VfxController vfxController, List<EventParams> events)
         {
@@ -18,17 +18,31 @@ namespace Module.Game.Events
 
             foreach (var eventParams in events)
             {
-                _events.Add(eventParams.eventType, eventParams);
+                List<EventParams> list; 
+                if (!_events.TryGetValue(eventParams.eventType, out list))
+                {
+                    list = new List<EventParams>();
+                    _events.Add(eventParams.eventType, list);
+                }
+
+                list.Add(eventParams);
             }
         }
 
         public void ProcessEvent(EventType eventType, Transform vfxContainer = null)
         {
-            if (!_events.TryGetValue(eventType, out var eventParams))
+            if (!_events.TryGetValue(eventType, out var eventParamsList))
             {
                 Debug.LogError($"Event params for {eventType} not found");
                 return;
             }
+
+            if (eventParamsList == null || eventParamsList.Count == 0)
+            {
+                return;
+            }
+
+            var eventParams = eventParamsList[Random.Range(0, eventParamsList.Count)];
 
             if (eventParams.Clips != null || eventParams.Clips.Count != 0)
             {
