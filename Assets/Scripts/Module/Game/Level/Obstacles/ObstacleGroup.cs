@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-using Module.Game;
-using UnityEngine.SceneManagement;
+﻿using Nothing;
+using UnityEngine;
 
-namespace Nothing
+namespace Module.Game.Level.Obstacles
 {
     public class ObstacleGroup : LevelObject
     {
@@ -13,10 +11,14 @@ namespace Nothing
             var deleter = other.gameObject.GetComponent<LevelObjectDeleter>();
 
             if (deleter != null)
+            {
                 GameModule.Instance.GameObjectPool.UtilizeObject(gameObject);
+            }
 
-            if (player is null)
+            if (player == null)
+            {
                 return;
+            }
 
             player.GetComponent<Health>().Damage(9999);
         }

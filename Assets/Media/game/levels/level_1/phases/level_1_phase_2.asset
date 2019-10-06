@@ -17,6 +17,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d5fe133f5ca2a45e680cfd52a7ca403c, type: 2}
   movementSpeed: 16.5
   phaseType: 1
-  completeConditionEnemies: 20
+  completeConditionEnemies: 1
   completeConditionDuration: 0
   completeConditionBossHealth: 0

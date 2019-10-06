@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Module.Game;
-using UnityEngine.SceneManagement;
 
-namespace Nothing
+namespace Module.Game.Level.Obstacles
 {
     public class Obstacle : MonoBehaviour
     {

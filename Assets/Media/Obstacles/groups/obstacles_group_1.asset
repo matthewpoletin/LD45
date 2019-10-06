@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0fa1aaadb165e84d83169c2ffc9adcd, type: 3}
-  m_Name: ObstacleGroups
+  m_Name: obstacles_group_1
   m_EditorClassIdentifier: 
   obstacleGroups:
   - {fileID: 7433631244079001200, guid: 89d303915aa414ba487162b76d9b8b26, type: 3}

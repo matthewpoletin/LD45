@@ -35,12 +35,14 @@ namespace Module.Game
         [SerializeField] private LevelManager levelManager = null;
         [SerializeField] private UIManager uiManager = null;
         [SerializeField] private SoundManager soundManager = null;
+        [SerializeField] private EnemySpawner _enemySpawner = null;
 
         public GameParams GameParams => gameParams;
         public GameObjectPool GameObjectPool => gameObjectPool;
         public LevelManager LevelManager => levelManager;
         public UIManager UiManager => uiManager;
         public SoundManager SoundManager => soundManager;
+        public EnemySpawner EnemySpawner => _enemySpawner; 
 
         private VfxController _vfxController = null;
         private EventManager _eventManager = null;
@@ -68,7 +70,10 @@ namespace Module.Game
 
         private void Update()
         {
-            _vfxController.Tick(Time.deltaTime);
+            var deltaTime = Time.deltaTime;
+            
+            levelManager.Tick(deltaTime);
+            _vfxController.Tick(deltaTime);
         }
     }
 }
