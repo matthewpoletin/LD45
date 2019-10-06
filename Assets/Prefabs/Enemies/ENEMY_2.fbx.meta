@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b47e8545d17a740478c6da1239e204a5
+guid: 84d6d4d89ebd56e469ae7b00f2a115e4
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       74: 395390805935382647
     second: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Run"
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 5013593d4fce80c4cb7c54dcc85e12ea, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -78,7 +83,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

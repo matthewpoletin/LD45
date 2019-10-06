@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11d02d2f9acb94b55ae5d96dd5061aed, type: 2}
   - {fileID: 11400000, guid: ae91c2eac97764b62b994fd8c79a8cdf, type: 2}
   - {fileID: 11400000, guid: 232b872d5cd7a46cc80c1b2cbe2b45fe, type: 2}
-  obstacleGroupParams: {fileID: 11400000, guid: 7b9c2495a680d453b829c7f17d7be55f,
+  obstacleGroupParams: {fileID: 11400000, guid: e7058e1c8fbf27341a2c0051d94b3063,
     type: 2}

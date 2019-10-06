@@ -237,7 +237,7 @@ MonoBehaviour:
   levelManager: {fileID: 1280373596}
   uiManager: {fileID: 1975765147}
   soundManager: {fileID: 765537295}
-  _enemySpawner: {fileID: 0}
+  _enemySpawner: {fileID: 611696444}
 --- !u!1 &282877615
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +398,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae8c686dec984b8ca44046a7575c298, type: 3}
+--- !u!114 &611696444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7438607176006735585, guid: 21baf7968f396904bb2e09673d51b2ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 644805044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ab33613388efb4d92e36a3a19e445d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &644805044
 PrefabInstance:
   m_ObjectHideFlags: 0
