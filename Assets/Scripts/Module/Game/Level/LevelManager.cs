@@ -119,14 +119,17 @@ namespace Module.Game.Level
             if (_currentPhaseIndex == 1)
             {
                 GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee;
+                GameModule.Instance.Player.ChangeWeapon(WeaponType.None);
             }
             else if (_currentPhaseIndex == 2 || _currentPhaseIndex == 3)
             {
                 GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee | EnemyType.Ranged;
+                GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
             }
             else
             {
                 GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
+                GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
             }
 
             _chunksController.CurrentPhaseIndex = _currentPhaseIndex;

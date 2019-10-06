@@ -6,7 +6,6 @@ namespace Module.Game.Level.Phase
     [CreateAssetMenu(fileName = "New Phase Params", menuName = "Params/PhaseParams", order = 15)]
     public class PhaseParams : ScriptableObject
     {
-
         [SerializeField] private List<ChunkParams> chunks = null;
         [SerializeField] private float movementSpeed = 0;
         [SerializeField] private PhaseType phaseType = PhaseType.Timeout;

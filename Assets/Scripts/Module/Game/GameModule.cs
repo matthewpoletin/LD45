@@ -36,6 +36,7 @@ namespace Module.Game
         [SerializeField] private UIManager uiManager = null;
         [SerializeField] private SoundManager soundManager = null;
         [SerializeField] private EnemySpawner _enemySpawner = null;
+        [SerializeField] private Player _player = null;
 
         public GameParams GameParams => gameParams;
         public GameObjectPool GameObjectPool => gameObjectPool;
@@ -43,6 +44,7 @@ namespace Module.Game
         public UIManager UiManager => uiManager;
         public SoundManager SoundManager => soundManager;
         public EnemySpawner EnemySpawner => _enemySpawner; 
+        public Player Player => _player; 
 
         private VfxController _vfxController = null;
         private EventManager _eventManager = null;

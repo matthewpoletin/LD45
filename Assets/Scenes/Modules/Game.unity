@@ -238,6 +238,7 @@ MonoBehaviour:
   uiManager: {fileID: 1975765147}
   soundManager: {fileID: 765537295}
   _enemySpawner: {fileID: 611696444}
+  _player: {fileID: 0}
 --- !u!1 &282877615
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +423,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[EnemySpawner]'
       objectReference: {fileID: 0}
+    - target: {fileID: 7438607176006735586, guid: 21baf7968f396904bb2e09673d51b2ed,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 7438607176006735584, guid: 21baf7968f396904bb2e09673d51b2ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -435,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 7438607176006735584, guid: 21baf7968f396904bb2e09673d51b2ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7438607176006735584, guid: 21baf7968f396904bb2e09673d51b2ed,
         type: 3}

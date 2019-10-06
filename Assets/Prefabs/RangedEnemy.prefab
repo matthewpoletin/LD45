@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67538f0cfa72840558c8e2413b2833de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 3
+  totalHealth: 1
   invincibilityTime: 0
 --- !u!54 &-4497907689671874588
 Rigidbody:
