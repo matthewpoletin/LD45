@@ -41,6 +41,7 @@ namespace Module.Game
 
             // initialize level
             levelManager.Init(gameParams.Levels[0]);
+            levelManager.StartLevel();
         }
     }
 }

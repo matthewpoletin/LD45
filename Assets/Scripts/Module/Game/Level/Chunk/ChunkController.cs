@@ -47,7 +47,10 @@ namespace Module.Game.Level.Chunk
             var randomChunkParams = GetRandomChunk();
             var chunkGameObject =
                 GameModule.Instance.GameObjectPool.GetObject(randomChunkParams.ChunkPrefab, _chunksContainer);
-            chunkGameObject.transform.position = new Vector3(0, 0, previousChunkZ);
+            chunkGameObject.transform.position = new Vector3(
+                _chunksContainer.transform.position.x,
+                _chunksContainer.transform.position.y,
+                previousChunkZ);
 
             var chunkData = new ChunkData(chunkGameObject, randomChunkParams.ChunkLength);
             _chunks.Add(chunkData);
