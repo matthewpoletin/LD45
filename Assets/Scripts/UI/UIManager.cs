@@ -33,6 +33,7 @@ namespace Nothing
         private bool isProgressBarFull;
 
         private Gradient progressBarGradient;
+        private int progressBarStage = 0;
 
         public void Init()
         {
@@ -49,6 +50,8 @@ namespace Nothing
             progressBarGradient.SetKeys(gradientColorKeys, gradientAlphaKeys);
 
             progressBarBackbroundImage.color = progressBarBackgroundStartColor;
+
+            ShowInstructions();
         }
 
         private void Update()
@@ -66,15 +69,17 @@ namespace Nothing
         public void UpdateProgress(float progressAmount)
         {
             progressBarSlider.value = progressAmount;
-            progressBarFillImage.color = progressBarGradient.Evaluate(progressAmount); 
+            if (progressBarStage == 0)
+                progressBarFillImage.color = progressBarGradient.Evaluate(progressAmount); 
             if (progressAmount >= 0.99f && !isProgressBarFull) {
                 ProgressBarFull();
             }
         }
 
         private void ProgressBarFull() {
+            progressBarStage = 1;
             isProgressBarFull = true;
-            progressBarFillImage.color = progressBarBackgroundBossColor;
+            progressBarBackbroundImage.color = progressBarBackgroundBossColor;
         }
     }
 }

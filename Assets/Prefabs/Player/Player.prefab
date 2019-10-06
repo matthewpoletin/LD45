@@ -173,8 +173,8 @@ MonoBehaviour:
   downKeys: 7300000012010000
   leftKeys: 6100000014010000
   rightKeys: 6400000013010000
-  jumpKeys: 20000000
-  attackKeys: 6500000043010000
+  jumpKeys: 11010000
+  attackKeys: 2000000043010000
   humiliateKeys: 62000000
   player: {fileID: 1259888558302218748}
 --- !u!54 &1259888558302218747
@@ -393,11 +393,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: fbf952be89cc6544796f3958ba6528af,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b130534dbe0ab42a898e69eda025ec3c, type: 2}
     - target: {fileID: -4216859302048453862, guid: fbf952be89cc6544796f3958ba6528af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,16 +448,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: fbf952be89cc6544796f3958ba6528af,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b130534dbe0ab42a898e69eda025ec3c, type: 2}
     - target: {fileID: -6057140222963153312, guid: f69696ac4468e41639e872944fc4e5fa,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: a3562d7cc7cae4b6594a533a6e7284f0, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -6301457468599476105, guid: f69696ac4468e41639e872944fc4e5fa,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 95c8945c18904204da086369f2d4f4b1, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf952be89cc6544796f3958ba6528af, type: 3}
 --- !u!4 &6220569335322422154 stripped
