@@ -65,5 +65,10 @@ namespace Module.Game
             levelManager.OnPhaseLevelChange += uiManager.UpdateProgress;
             levelManager.OnPhaseCompletion += soundManager.ChangeMusicPhase;
         }
+
+        private void Update()
+        {
+            _vfxController.Tick(Time.deltaTime);
+        }
     }
 }

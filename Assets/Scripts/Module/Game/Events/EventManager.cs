@@ -29,7 +29,7 @@ namespace Module.Game.Events
             }
         }
 
-        public void ProcessEvent(EventType eventType, Transform vfxContainer = null)
+        public void ProcessEvent(EventType eventType, Transform vfxContainer = null, Vector3 vfxPosition = default)
         {
             if (!_events.TryGetValue(eventType, out var eventParamsList))
             {
@@ -51,7 +51,7 @@ namespace Module.Game.Events
 
             if (eventParams.Vfx != null)
             {
-                _vfxController.PlayVfx(eventParams.Vfx, vfxContainer);
+                _vfxController.PlayVfx(eventParams.Vfx, vfxContainer, vfxPosition);
             }
         }
     }
