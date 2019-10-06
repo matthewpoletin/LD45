@@ -1,3 +1,4 @@
+using System;
 using Module.Game.Level.Chunk;
 using UnityEngine;
 
@@ -18,10 +19,29 @@ namespace Module.Game.Level
         private ChunkController _chunksController = null;
 
         private int _enemiesKilledCounter = 0;
-        private float _phaseTimeoutTime = 0f;
+        private float _phaseTimeoutStartTime = 0f;
+        private float _phaseTimeoutEndTime = 0f;
         private PhaseType _currentPhaseType;
         private int _currentPhaseCompletionEnemies;
         private float _currentPhaseBossHealth;
+
+        public event Action OnPhaseCompletion;
+        public event Action<float> OnPhaseLevelChange;
+        private float _phaseProgressLevel = 0f;
+        private float _overallProgressLevel = 0f;
+
+        public float PhaseProgressLevel
+        {
+            set
+            {
+                _phaseProgressLevel = Mathf.Clamp(value, 0f, 1f);
+                OnPhaseLevelChange?.Invoke(_phaseProgressLevel);
+                if (_phaseProgressLevel >= 1f)
+                {
+                    OnPhaseCompletion?.Invoke();
+                }
+            }
+        }
 
         public void Init(LevelParams levelParams)
         {
@@ -51,9 +71,9 @@ namespace Module.Game.Level
         public void IncrementPhase()
         {
             _currentPhaseIndex += 1;
-            
+
             Debug.Log($"Phase {_currentPhaseIndex} starts now");
-            
+
             if (_currentPhaseIndex > _levelParams.Phases.Count)
             {
                 // FIXME: Show win screen
@@ -63,11 +83,14 @@ namespace Module.Game.Level
             var nextPhaseParams = _levelParams.Phases[_currentPhaseIndex];
 
             _currentPhaseType = nextPhaseParams.PhaseType;
-            _currentPhaseCompletionEnemies = nextPhaseParams.CompleteConditionEnemies;
+            _currentPhaseCompletionEnemies = nextPhaseParams.CompleteConditionEnemies != 0
+                ? nextPhaseParams.CompleteConditionEnemies
+                : 1;
             var completeConditionDuration = nextPhaseParams.CompleteConditionDuration;
             completeConditionDuration =
                 Mathf.Approximately(completeConditionDuration, 0f) ? 40f : completeConditionDuration;
-            _phaseTimeoutTime = Time.time + completeConditionDuration;
+            _phaseTimeoutStartTime = Time.time;
+            _phaseTimeoutEndTime = Time.time + completeConditionDuration;
 
             _chunksController.CurrentPhaseIndex = _currentPhaseIndex;
             _currentLevelMovementSpeed = nextPhaseParams.MovementSpeed;
@@ -75,6 +98,8 @@ namespace Module.Game.Level
 
         public void Update()
         {
+            UpdateCurrentPhaseState();
+
             if (IsPhaseCompleted())
             {
                 IncrementPhase();
@@ -83,13 +108,37 @@ namespace Module.Game.Level
             _chunksController.Tick(Time.deltaTime);
         }
 
+        private void UpdateCurrentPhaseState()
+        {
+            switch (_currentPhaseType)
+            {
+                case PhaseType.Timeout:
+                {
+                    PhaseProgressLevel = (Time.time - _phaseTimeoutStartTime) /
+                                         (_phaseTimeoutEndTime - _phaseTimeoutStartTime);
+                    break;
+                }
+
+                case PhaseType.EnemiesKilled:
+                {
+                    PhaseProgressLevel = (float) _enemiesKilledCounter / _currentPhaseCompletionEnemies;
+                    break;
+                }
+
+                case PhaseType.BossKill:
+                {
+                    break;
+                }
+            }
+        }
+
         private bool IsPhaseCompleted()
         {
             switch (_currentPhaseType)
             {
                 case PhaseType.Timeout:
                 {
-                    if (_phaseTimeoutTime <= Time.time)
+                    if (_phaseTimeoutEndTime <= Time.time)
                     {
                         return true;
                     }

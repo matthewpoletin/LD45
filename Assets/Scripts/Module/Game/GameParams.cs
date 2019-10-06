@@ -8,8 +8,10 @@ namespace Module.Game
     public class GameParams : ScriptableObject
     {
         [SerializeField] private List<LevelParams> levels = null;
+        [SerializeField] private AudioParams audioParams = null;
 
         public List<LevelParams> Levels => levels;
+        public AudioParams AudioParams => audioParams;
 
         public float lineWidth = 3;
     }
