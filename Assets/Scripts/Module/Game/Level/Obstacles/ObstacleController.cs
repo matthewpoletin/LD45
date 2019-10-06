@@ -39,6 +39,9 @@ namespace Module.Game.Level.Obstacles
                     obstacle.transform.localPosition.y,
                     obstacle.transform.localPosition.z);
 
+                var rot = obstacle.transform.localRotation;
+                obstacle.transform.localRotation = Quaternion.Euler(rot.x, rot.y + Random.Range(0, 360), rot.z);
+
                 var pause = Random.Range(SpawnPauseMin, SpawnPauseMax);
                 _spawnCooldownTime = Time.time + pause;
             }
