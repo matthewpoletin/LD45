@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_player_attack
   m_EditorClassIdentifier: 
-  eventType: 1
+  eventType: 0
   clips:
   - {fileID: 8300000, guid: 3cebddb8a92764dbc9888316aa3adbc8, type: 3}
   - {fileID: 8300000, guid: 609465ace6f584eb2b90ea9fe491daeb, type: 3}

@@ -12,8 +12,12 @@ namespace Module.Game.Events
         [FormerlySerializedAs("clip")] [SerializeField] private List<AudioClip> clips = null;
         [SerializeField] private VfxParams vfx = null;
 
+        [SerializeField] private bool isBoss;
+
         public List<AudioClip> Clips => clips;
         public EventType EventType => eventType;
         public VfxParams Vfx => vfx;
+
+        public bool IsBoss => isBoss;
     }
 }

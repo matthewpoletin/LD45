@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
-  m_Name: event_player_jump
+  m_Name: event_tongue_spawn
   m_EditorClassIdentifier: 
-  eventType: 2
-  clips:
-  - {fileID: 8300000, guid: 259dda4097f934cd196b51dd56f475bd, type: 3}
-  vfx: {fileID: 11400000, guid: ca153aa7950aa416cadd972d59c01db5, type: 2}
+  eventType: 0
+  clips: []
+  vfx: {fileID: 0}

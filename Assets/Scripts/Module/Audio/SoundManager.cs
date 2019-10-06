@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Module.Game;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Module.Audio
 {
@@ -76,11 +77,25 @@ namespace Module.Audio
                 return;
             }
 
-            var soundObject = new GameObject("SFX");
             var clip = audioClips[Random.Range(0, audioClips.Count)];
+            CreateAudioObject(clip, _audioParams.SfxMixerGroup);
+        }
+
+        public void PlayBossSfx(List<AudioClip> audioClips) {
+            if (audioClips == null || audioClips.Count == 0)
+            {
+                return;
+            }
+
+            var clip = audioClips[Random.Range(0, audioClips.Count)];
+            CreateAudioObject(clip, _audioParams.TongueMixerGroup);
+        }
+
+        private void CreateAudioObject(AudioClip clip, AudioMixerGroup mixerGroup) {
+                        var soundObject = new GameObject("SFX");
             var audSrc = soundObject.AddComponent<AudioSource>();
 
-            audSrc.outputAudioMixerGroup = _audioParams.SfxMixerGroup;
+            audSrc.outputAudioMixerGroup = mixerGroup;
             audSrc.clip = clip;
             audSrc.Play();
             soundObject.name = clip.name;
