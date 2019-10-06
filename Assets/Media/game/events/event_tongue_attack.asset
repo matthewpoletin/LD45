@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_tongue_attack
   m_EditorClassIdentifier: 
-  eventType: 0
-  clips: []
+  eventType: 7
+  clips:
+  - {fileID: 8300000, guid: 1fd4ca61f2fb74a349874f79ef37cb2c, type: 3}
   vfx: {fileID: 0}
+  isBoss: 1
