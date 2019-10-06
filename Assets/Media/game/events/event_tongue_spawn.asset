@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_tongue_spawn
   m_EditorClassIdentifier: 
-  eventType: 0
-  clips: []
+  eventType: 5
+  clips:
+  - {fileID: 8300000, guid: 499cce005ae77440d9e7ab23f66e55e7, type: 3}
   vfx: {fileID: 0}
+  isBoss: 1

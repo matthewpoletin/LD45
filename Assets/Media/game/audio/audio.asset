@@ -16,6 +16,8 @@ MonoBehaviour:
     type: 2}
   sfxMixerGroup: {fileID: 8368957603546619780, guid: fd81ebf3690da47ba9448500b010fe35,
     type: 2}
+  tongueMixerGroup: {fileID: -2850919541176751398, guid: fd81ebf3690da47ba9448500b010fe35,
+    type: 2}
   musicClips:
   - {fileID: 8300000, guid: fdd1770ac5b4c4c75b1542e56d7cd1ab, type: 3}
   - {fileID: 8300000, guid: 24fc7a09258b64cc58dc9327494265af, type: 3}

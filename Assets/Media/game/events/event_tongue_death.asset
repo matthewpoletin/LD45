@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_tongue_death
   m_EditorClassIdentifier: 
-  eventType: 0
-  clips: []
+  eventType: 8
+  clips:
+  - {fileID: 8300000, guid: 32ca4bb8e52cb4968874f0fbc0058c1e, type: 3}
   vfx: {fileID: 0}
+  isBoss: 1
