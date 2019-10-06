@@ -3,6 +3,13 @@ using System.Collections;
 using Module.Game;
 
 namespace Nothing {
+
+    [System.Flags]
+    public enum EnemyType {
+        Melee = 1,
+        Ranged = 2
+    }
+
     public class EnemySpawner : MonoBehaviour {
         public float spawnPauseMin = 1;
         public float spawnPauseMax = 2;
@@ -11,6 +18,10 @@ namespace Nothing {
 
         private void Start() {
             StartCoroutine(SpawnEnemies());
+        }
+
+        public void SetSpawnedEnemyType(EnemyType type) {
+
         }
 
         private IEnumerator SpawnEnemies() {
