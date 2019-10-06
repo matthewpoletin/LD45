@@ -112,7 +112,9 @@ namespace Nothing
             OnLineChange();
         }
 
-
+        public void Humiliate() {
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Humiliate);
+        }
         private void OnLineChange()
         {
             IsChangingLine = true;

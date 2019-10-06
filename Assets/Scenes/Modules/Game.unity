@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameParams: {fileID: 11400000, guid: 9b9a8dccda4cb4e7cab2dffda2ccfb0c, type: 2}
-  audioParams: {fileID: 11400000, guid: f2501696c1ee54835a2876033f000be8, type: 2}
   gameObjectPool: {fileID: 1432563096}
   levelManager: {fileID: 1280373596}
   uiManager: {fileID: 1975765147}
@@ -670,6 +669,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1259888558302218748, guid: 0ea0c257d40902149bcf7892ada9663d,
+        type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1231018823}
     - target: {fileID: 1259888558302218744, guid: 0ea0c257d40902149bcf7892ada9663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -725,11 +729,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1259888558302218748, guid: 0ea0c257d40902149bcf7892ada9663d,
-        type: 3}
-      propertyPath: playerHealth
-      value: 
-      objectReference: {fileID: 1231018823}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ea0c257d40902149bcf7892ada9663d, type: 3}
 --- !u!114 &1231018823 stripped

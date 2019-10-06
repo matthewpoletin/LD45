@@ -33,3 +33,15 @@ MonoBehaviour:
     sfxType: 1
   - clip: {fileID: 8300000, guid: 259dda4097f934cd196b51dd56f475bd, type: 3}
     sfxType: 2
+  - clip: {fileID: 8300000, guid: 1dcc8d55540794368a1beaa155e0bbcb, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 8e47b3c8175664391bd2b4124d4b7563, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 7f4f19ddf7ab24ae59904c4adadbb373, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: d310204626cd64e95a9851edef4caab3, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 3d39b63ed392c492cb13bc667b22e101, type: 3}
+    sfxType: 3
+  - clip: {fileID: 8300000, guid: 42148195a8df74133ab4c1c3a6ecc107, type: 3}
+    sfxType: 3
