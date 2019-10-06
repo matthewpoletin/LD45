@@ -30,9 +30,13 @@ namespace Module.Game
         public GameObjectPool GameObjectPool => gameObjectPool;
         public LevelManager LevelManager => levelManager;
 
+        public SoundManager SoundManager => soundManager;
+
         [SerializeField] private GameParams gameParams = null;
         [SerializeField] private GameObjectPool gameObjectPool = null;
         [SerializeField] private LevelManager levelManager = null;
+
+        [SerializeField] private SoundManager soundManager = null;
 
         private void Init()
         {
@@ -42,6 +46,8 @@ namespace Module.Game
             // initialize level
             levelManager.Init(gameParams.Levels[0]);
             levelManager.StartLevel();
+
+            soundManager.Init();
         }
     }
 }
