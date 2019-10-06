@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Module.Game;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -51,10 +52,12 @@ namespace Nothing
 
         private void OnEnable() {
             playerHealth.OnHealthDepleated += OnHealthDepleated;
+            playerHealth.OnDamageTaken += OnDamageTaken;
         }
 
         private void OnDisable() {
             playerHealth.OnHealthDepleated -= OnHealthDepleated;
+            playerHealth.OnDamageTaken -= OnDamageTaken;
         }
 
         public void Up()
@@ -73,6 +76,8 @@ namespace Nothing
             IsJumping = true;
 
             velocityY = jumpVelocity;
+
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Jump);
         }
 
         public void Left()
@@ -162,6 +167,10 @@ namespace Nothing
 
         private void OnHealthDepleated() {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private void OnDamageTaken(int amount) {
+            GameModule.Instance.SoundManager.PlaySfx(SfxType.Damaged);
         }
     }
 }

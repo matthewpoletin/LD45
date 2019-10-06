@@ -235,6 +235,7 @@ MonoBehaviour:
   gameParams: {fileID: 11400000, guid: 9b9a8dccda4cb4e7cab2dffda2ccfb0c, type: 2}
   gameObjectPool: {fileID: 1432563096}
   levelManager: {fileID: 1280373596}
+  audioParams: {fileID: 11400000, guid: f2501696c1ee54835a2876033f000be8, type: 2}
   soundManager: {fileID: 765537295}
 --- !u!1 &282877615
 GameObject:
@@ -636,18 +637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e36a9e0786e34fc3a1b8985adc36bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicGroup: {fileID: -2147513638784885060, guid: fd81ebf3690da47ba9448500b010fe35,
-    type: 2}
-  sfxGroup: {fileID: 8368957603546619780, guid: fd81ebf3690da47ba9448500b010fe35,
-    type: 2}
-  musicClips:
-  - {fileID: 8300000, guid: 24fc7a09258b64cc58dc9327494265af, type: 3}
-  - {fileID: 8300000, guid: 05f52e0e5f93942c4acfd48bc9c88a0e, type: 3}
-  - {fileID: 8300000, guid: 830f3fa0ac5314f99a3452f36f76c450, type: 3}
-  - {fileID: 8300000, guid: a634c129f42b9495cb68928e8b26f17e, type: 3}
-  - {fileID: 8300000, guid: e8a6584d024334b4484a9d53d5156aa5, type: 3}
-  - {fileID: 8300000, guid: 8efd8cb8a2c40454f826b69ffd1c56d8, type: 3}
-  - {fileID: 8300000, guid: fde313f5fe30e455ba620975cc346f63, type: 3}
 --- !u!4 &765537296
 Transform:
   m_ObjectHideFlags: 0
