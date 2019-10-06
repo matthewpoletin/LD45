@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_humiliate_dickhead
   m_EditorClassIdentifier: 
-  eventType: 1
+  eventType: 3
   clips:
   - {fileID: 8300000, guid: 1dcc8d55540794368a1beaa155e0bbcb, type: 3}
   vfx: {fileID: 11400000, guid: 438e17b5c1a1f4505811954c11bb277a, type: 2}

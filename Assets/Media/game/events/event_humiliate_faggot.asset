@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_humiliate_faggot
   m_EditorClassIdentifier: 
-  eventType: 1
+  eventType: 3
   clips:
   - {fileID: 8300000, guid: 42148195a8df74133ab4c1c3a6ecc107, type: 3}
   vfx: {fileID: 11400000, guid: 84851cb7162c040efa3cdb1d36eb0998, type: 2}

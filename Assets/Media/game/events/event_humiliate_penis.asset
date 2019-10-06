@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d73a3518bd04ca4b56cab070d60a612, type: 3}
   m_Name: event_humiliate_penis
   m_EditorClassIdentifier: 
-  eventType: 1
+  eventType: 3
   clips:
   - {fileID: 8300000, guid: 8e47b3c8175664391bd2b4124d4b7563, type: 3}
   vfx: {fileID: 11400000, guid: cc7c0acb9606f4b30b25fee2d123f8c1, type: 2}
