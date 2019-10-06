@@ -15,4 +15,14 @@ MonoBehaviour:
   levels:
   - {fileID: 11400000, guid: d0c323fb1cd674fecba7dafae224db93, type: 2}
   audioParams: {fileID: 11400000, guid: f2501696c1ee54835a2876033f000be8, type: 2}
+  events:
+  - {fileID: 11400000, guid: ec084105c32c64486bb87e8631b685ff, type: 2}
+  - {fileID: 11400000, guid: 2262115658ced4f63b4f9210902e557b, type: 2}
+  - {fileID: 11400000, guid: 309fd2452166144b3b1e056365417c8c, type: 2}
+  - {fileID: 11400000, guid: ab02fd4405ae946068d587d0da7e2782, type: 2}
+  - {fileID: 11400000, guid: 9002a9961ad044bf8a4c7dbb0bc118d2, type: 2}
+  - {fileID: 11400000, guid: 5c9781be67602443c865dc595a28264e, type: 2}
+  - {fileID: 11400000, guid: f591499b349124e9ab495e2d85b49fbd, type: 2}
+  - {fileID: 11400000, guid: 9140e59e20eb84281973810ea6ecdf64, type: 2}
+  - {fileID: 11400000, guid: 49c96cd6cbc7f43eba54867baaeadf69, type: 2}
   lineWidth: 3
