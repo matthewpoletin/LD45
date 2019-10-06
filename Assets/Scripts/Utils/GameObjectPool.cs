@@ -22,7 +22,8 @@ namespace Utils
             {
                 var itemPrefab = item.Item1;
                 var itemGameObject = item.Item2;
-                if (!itemGameObject.activeInHierarchy && itemGameObject.transform.parent == _utilizationContainer && itemPrefab == prefab)
+                if (!itemGameObject.activeInHierarchy && itemGameObject.transform.parent == _utilizationContainer &&
+                    itemPrefab == prefab)
                 {
                     itemGameObject.SetActive(true);
                     itemGameObject.transform.parent = container;
@@ -31,12 +32,16 @@ namespace Utils
             }
 
             // create object if object not found
-            return AddObject(prefab, container);
+            var newGameObject = AddObject(prefab);
+            newGameObject.transform.parent = container;
+            newGameObject.SetActive(true);
+            return newGameObject;
         }
 
-        public GameObject AddObject(GameObject prefab, Transform container)
+        public GameObject AddObject(GameObject prefab)
         {
-            var instance = Instantiate(prefab, container);
+            var instance = Instantiate(prefab, _utilizationContainer);
+            instance.SetActive(false);
             _pool.Add(Tuple.Create(prefab, instance));
             return instance;
         }

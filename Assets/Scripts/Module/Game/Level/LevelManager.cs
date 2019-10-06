@@ -36,7 +36,7 @@ namespace Module.Game.Level
             {
                 foreach (var chunkParams in phaseParams.Chunks)
                 {
-                    // FIXME: Add chunks to object pool
+                    GameModule.Instance.GameObjectPool.AddObject(chunkParams.ChunkPrefab);
                 }
             }
 
