@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0fa1aaadb165e84d83169c2ffc9adcd, type: 3}
-  m_Name: obstacles_group_1
+  m_Script: {fileID: 11500000, guid: 8bb3dce6335541f47a8cc54b472eb059, type: 3}
+  m_Name: obstacle_group_1
   m_EditorClassIdentifier: 
   obstacleGroups:
   - {fileID: 5907795885956771612, guid: f5e6a145d67be7d479505a38df68f71a, type: 3}
