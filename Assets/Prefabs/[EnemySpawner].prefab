@@ -45,4 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPauseMin: 2
   spawnPauseMax: 5
-  enemy: {fileID: 8276862314587099992, guid: efcf934ba031af64fa533b39d20c0440, type: 3}
+  meleeEnemyPrefab: {fileID: 8687913692197600653, guid: 34bfceade45382648bae2db8d9a43632,
+    type: 3}
+  rangedEnemyPrefab: {fileID: 8276862314587099992, guid: efcf934ba031af64fa533b39d20c0440,
+    type: 3}
+  teethEnemyPrefab: {fileID: 0}
