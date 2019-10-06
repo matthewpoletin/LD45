@@ -14,8 +14,12 @@ namespace Module.Game.Level
 
         public float CurrentLevelMovementSpeed => Mathf.Max(0f, _currentLevelMovementSpeed);
 
+
         [SerializeField] private Transform chunksContainer = null;
         [SerializeField] private Transform obstaclesContainer = null;
+
+        [SerializeField] private GameObject bossPrefab = null;
+        [SerializeField] private Transform bossContainer = null;
 
         private LevelParams _levelParams = null;
 
@@ -86,7 +90,7 @@ namespace Module.Game.Level
         {
             _currentPhaseIndex += 1;
 
-            Debug.Log($"Phase {_currentPhaseIndex} starts now");
+            Debug.Log($"Phase {_currentPhaseIndex + 1} starts now");
 
             if (_currentPhaseIndex > _levelParams.Phases.Count)
             {
@@ -95,6 +99,11 @@ namespace Module.Game.Level
             }
 
             var nextPhaseParams = _levelParams.Phases[_currentPhaseIndex];
+
+            if (_currentPhaseIndex == _levelParams.Phases.Count)
+            {
+                var bossGameObject = Instantiate(bossPrefab, bossContainer);
+            }
 
             _currentPhaseType = nextPhaseParams.PhaseType;
             _currentPhaseCompletionEnemies = nextPhaseParams.CompleteConditionEnemies != 0
@@ -113,7 +122,11 @@ namespace Module.Game.Level
             }
             else if (_currentPhaseIndex == 2 || _currentPhaseIndex == 3)
             {
-                GameModule.Instance.EnemySpawner.EnemyTypes = (EnemyType.Melee & EnemyType.Ranged);
+                GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee | EnemyType.Ranged;
+            }
+            else
+            {
+                GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
             }
 
             _chunksController.CurrentPhaseIndex = _currentPhaseIndex;

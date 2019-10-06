@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Module.Game.Level.Obstacles;
+using Module.Game.Level.Phase;
 using UnityEngine;
 using UnityEngine.Serialization;
 

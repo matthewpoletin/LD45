@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using Module.Game.Level.Chunk;
-using Module.Game.Level.Phase;
 using UnityEngine;
 
-namespace Module.Game.Level
+namespace Module.Game.Level.Phase
 {
     [CreateAssetMenu(fileName = "New Phase Params", menuName = "Params/PhaseParams", order = 15)]
     public class PhaseParams : ScriptableObject
