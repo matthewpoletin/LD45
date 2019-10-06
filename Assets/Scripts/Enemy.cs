@@ -4,9 +4,11 @@ using System.Collections;
 namespace Nothing
 {
     [RequireComponent(typeof(Health))]
-    public class Enemy : LevelObject
+    public class Enemy : MonoBehaviour
     {
         public int damage = 1;
+        public bool dieInColissionWithObstacles = true;
+        public bool dieInColissionWithPlayer = true;
 
         [SerializeField, HideInInspector]
         private Health health;
@@ -15,11 +17,11 @@ namespace Nothing
             health = GetComponent<Health>();
             health.OnHealthDepleated = () => Destroy(gameObject);
         }
-
+        
         public void OnTriggerEnter(Collider other) {
             var obstacleGroup = other.gameObject.GetComponent<ObstacleGroup>();
 
-            if (obstacleGroup != null) {
+            if (obstacleGroup != null && dieInColissionWithObstacles) {
                 health.Kill();
                 return;
             }
@@ -31,7 +33,8 @@ namespace Nothing
 
             player.GetComponent<Health>().Damage(damage);
 
-            health.Kill();
+            if (dieInColissionWithPlayer)
+                health.Kill();
         }
     }
 }

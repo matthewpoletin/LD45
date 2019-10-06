@@ -7,11 +7,18 @@ namespace Nothing
 {
     public class Obstacle : MonoBehaviour
     {
-        public ObstacleGroup group;
-
         private void OnTriggerEnter(Collider other)
         {
-            group.OnTriggerEnter(other);
+            var player = other.gameObject.GetComponent<Player>();
+            var deleter = other.gameObject.GetComponent<LevelObjectDeleter>();
+
+            if (deleter != null)
+                GameModule.Instance.GameObjectPool.UtilizeObject(gameObject);
+
+            if (player is null)
+                return;
+
+            player.GetComponent<Health>().Kill();
         }
     }
 }
