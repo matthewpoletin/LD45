@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Nothing;
+using UnityEngine;
 
 namespace Module.Game.Level.Obstacles
 {
