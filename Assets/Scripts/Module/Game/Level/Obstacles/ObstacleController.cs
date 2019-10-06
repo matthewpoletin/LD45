@@ -8,8 +8,8 @@ namespace Module.Game.Level.Obstacles
         private ObstacleGroupParams _obstacleGroupParams = null;
         private Transform _obstacleContainer = null;
 
-        private const float SpawnPauseMin = 0.1f;
-        private const float SpawnPauseMax = 0.2f;
+        private const float SpawnPauseMin = 0.4f;
+        private const float SpawnPauseMax = 1.3f;
 
         private float _spawnCooldownTime = 0f;
 
@@ -31,6 +31,13 @@ namespace Module.Game.Level.Obstacles
                 }
 
                 obstacle.transform.localPosition = Vector3.zero;
+
+                var row = Random.Range(-1, 2);
+
+                obstacle.transform.localPosition = new Vector3(
+                    row * GameModule.Instance.GameParams.lineWidth,
+                    obstacle.transform.localPosition.y,
+                    obstacle.transform.localPosition.z);
 
                 var pause = Random.Range(SpawnPauseMin, SpawnPauseMax);
                 _spawnCooldownTime = Time.time + pause;

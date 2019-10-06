@@ -35,16 +35,18 @@ namespace Nothing {
                 if (EnemyTypes.HasFlag(EnemyType.Teeth))
                     prefabs.Add(teethEnemyPrefab);
 
-                var prefab = prefabs[Random.Range(0, prefabs.Count)];
+                if (prefabs.Count != 0) {
+                    var prefab = prefabs[Random.Range(0, prefabs.Count)];
 
-                var go = Instantiate(prefab, transform);
+                    var go = Instantiate(prefab, transform);
 
-                var row = Random.Range(-1, 2);
+                    var row = Random.Range(-1, 2);
 
-                go.transform.localPosition = new Vector3(
-                    row * GameModule.Instance.GameParams.lineWidth,
-                    go.transform.localPosition.y,
-                    go.transform.localPosition.z);
+                    go.transform.localPosition = new Vector3(
+                        row * GameModule.Instance.GameParams.lineWidth,
+                        go.transform.localPosition.y,
+                        go.transform.localPosition.z);
+                }
 
                 yield return new WaitForSeconds(Random.Range(spawnPauseMin, spawnPauseMax));
             }
