@@ -18,7 +18,7 @@ namespace Nothing
             if (player is null)
                 return;
 
-            player.Lives = 0;
+            player.GetComponent<Health>().Damage(9999);
         }
     }
 }

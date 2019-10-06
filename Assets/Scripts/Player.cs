@@ -23,16 +23,10 @@ namespace Nothing
         public bool IsChangingLine { get; private set; } = false;
         [field: SerializeField, HideInInspector]
         public bool IsJumping { get; private set; } = false;
-        public int Lives
-        {
-            get => lives;
-            set
-            {
-                lives = value;
-                if (lives == 0)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }
+
+        [SerializeField]
+        private Health playerHealth;
+        
         [SerializeField, HideInInspector]
         private int lives = 3;
         [field: SerializeField, HideInInspector]
@@ -53,6 +47,14 @@ namespace Nothing
         private void Awake()
         {
             Weapon = defaultWeapon;
+        }
+
+        private void OnEnable() {
+            playerHealth.OnHealthDepleated += OnHealthDepleated;
+        }
+
+        private void OnDisable() {
+            playerHealth.OnHealthDepleated -= OnHealthDepleated;
         }
 
         public void Up()
@@ -156,6 +158,10 @@ namespace Nothing
             }
 
             transform.position = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
+        }
+
+        private void OnHealthDepleated() {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

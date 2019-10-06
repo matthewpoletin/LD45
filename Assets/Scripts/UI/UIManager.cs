@@ -6,13 +6,13 @@ namespace Nothing
 {
     public class UIManager : MonoBehaviour
     {
-        public Player player;
+        public Health playerHealth;
 
         public TextMeshProUGUI livesText;
 
         private void Update()
         {
-            livesText.text = "Lives: " + player.Lives;
+            livesText.text = "Lives: " + playerHealth.CurrentHealth;
         }
     }
 }
