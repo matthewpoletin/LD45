@@ -49,7 +49,8 @@ MonoBehaviour:
   middleCollider: {fileID: 6824866937701787430}
   sideCollider: {fileID: 6824866937701787431}
   preAttackDuration: 1.453
-  attackDuration: 0.756
+  attackDuration: 0.25
+  isAttacking: 0
 --- !u!65 &6824866937701787430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58,10 +59,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6824866937701787424}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 10, z: 15}
+  m_Size: {x: 3, y: 10, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6824866937701787431
 BoxCollider:
@@ -71,8 +72,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6824866937701787424}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 10, z: 15}
+  m_Size: {x: 3, y: 10, z: 20}
   m_Center: {x: -3, y: 0, z: 0}

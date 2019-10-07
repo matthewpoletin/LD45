@@ -29,18 +29,13 @@ namespace Module.Game.Boss
             Destroy(gameObject, 10f);
         }
 
-        public float posing1Duration = 5;
-        public float posing2Duration = 3;
-
-        public float durationBetweenAttacks = .5f;
+        public float attackDuration = 2f;
+        public float durationBetweenAttacksMin = 5f;
+        public float durationBetweenAttacksMax = 10f;
 
         public float teethAttackDuration = 6f;
 
         public BossSideAttack sideAttack;
-
-        //public BossState State => state;
-        //[SerializeField, HideInInspector]
-        //private BossState state = BossState.Posing;
 
         public BossAnimationView view;
 
@@ -48,44 +43,71 @@ namespace Module.Game.Boss
         {
             StartCoroutine(AttackSequence());
         }
-
-        private IEnumerator AttackSequence()
+        
+        private void OnEnable()
         {
-            yield return new WaitForSeconds(posing1Duration);
+            view.OnAttackLeftDamage += AttackLeft;
+            view.OnAttackRightDamage += AttackRight;
+            Health.OnHealthDepleated += BossDead;
+            Health.OnDamageTaken += TookDamage;
+        }
+        
+        
+        private void AttackLeft()
+        {
+            sideAttack.Attack(BossSideAttackVariant.LeftAndMiddle);
+        }
+        
+        private void AttackRight()
+        {
+            sideAttack.Attack(BossSideAttackVariant.RightAndMiddle);
+        }
 
-            yield return LeftAttack();
-
-            yield return new WaitForSeconds(posing2Duration);
-
-            yield return RightAttack();
-
+        private IEnumerator AttackSequence() {
             while (Health.CurrentHealth > 0)
             {
-                yield return TeethAttack();
-                yield return LeftAttack();
-                yield return RightAttack();
+                int rndAttack = Random.Range(0, 3);
+                switch (rndAttack)
+                {
+                    case 0:
+                        yield return LeftAttack();
+                        break;
+                    case 1:
+                        yield return RightAttack();
+                        break;
+//                    TODO: Add teeth attack
+//                    case 2:
+//                        yield return TeethAttack();
+//                        break;
+                }
 
-                yield return new WaitForSeconds(durationBetweenAttacks);
+                yield return new WaitForSeconds(Random.Range(durationBetweenAttacksMin, durationBetweenAttacksMax));
             }
         }
 
-        private IEnumerator LeftAttack()
-        {
+        private IEnumerator LeftAttack() {
             view.AttackLeft();
 
-            yield return sideAttack.Attack(BossSideAttackVariant.LeftAndMiddle);
+            yield return new WaitForSeconds(attackDuration);
         }
-
-        private IEnumerator RightAttack()
-        {
+        private IEnumerator RightAttack() {
             view.AttackRight();
 
-            yield return sideAttack.Attack(BossSideAttackVariant.RightAndMiddle);
+            yield return new WaitForSeconds(attackDuration);
+        }
+        
+        private IEnumerator TeethAttack() {
+            yield return new WaitForSeconds(teethAttackDuration);
         }
 
-        private IEnumerator TeethAttack()
+        private void BossDead()
         {
-            yield return new WaitForSeconds(teethAttackDuration);
+            StopAllCoroutines();
+            view.Death();
+        }
+
+        private void TookDamage(int dmg)
+        {
         }
     }
 }

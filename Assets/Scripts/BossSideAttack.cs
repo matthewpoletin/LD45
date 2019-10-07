@@ -27,13 +27,16 @@ namespace Nothing {
         [SerializeField, HideInInspector]
         private bool isAttacking = false;
 
-        public IEnumerator Attack(BossSideAttackVariant variant) {
+        public void Attack(BossSideAttackVariant variant)
+        {
+            StartCoroutine(_Attack(variant));
+        }
+
+        public IEnumerator _Attack(BossSideAttackVariant variant) {
             if (isAttacking)
                 yield break;
 
             isAttacking = true;
-
-            yield return new WaitForSeconds(preAttackDuration);
 
             SetCollidersEnabled(true);
 

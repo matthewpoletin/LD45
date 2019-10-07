@@ -200,9 +200,9 @@ MonoBehaviour:
   targetLine: 0
   currentVelocity: 0
   isChangingLine: 0
-  posing1Duration: 5
-  posing2Duration: 3
-  durationBetweenAttacks: 0.5
+  attackDuration: 2
+  durationBetweenAttacksMin: 1
+  durationBetweenAttacksMax: 2
   teethAttackDuration: 6
   sideAttack: {fileID: 4947899799406674181}
   view: {fileID: 3786473261826747417}
@@ -272,21 +272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6824866937701787428, guid: 8a005c4fa04717648826460a8de7bf11,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6824866937701787430, guid: 8a005c4fa04717648826460a8de7bf11,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6824866937701787431, guid: 8a005c4fa04717648826460a8de7bf11,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a005c4fa04717648826460a8de7bf11, type: 3}
