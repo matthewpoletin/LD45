@@ -77,6 +77,11 @@ namespace Module.Game
             
             levelManager.Tick(deltaTime);
             _vfxController.Tick(deltaTime);
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
 }
