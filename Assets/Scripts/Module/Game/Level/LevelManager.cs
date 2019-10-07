@@ -1,4 +1,5 @@
 using System;
+using Module.Game.BossView;
 using Module.Game.Level.Chunk;
 using Module.Game.Level.Obstacles;
 using Module.Game.Level.Phase;
@@ -28,21 +29,24 @@ namespace Module.Game.Level
         private ChunkController _chunksController = null;
         private ObstacleController _obstacleController = null;
 
-        private int _enemiesKilledCounter = 0;
+        private int _enemiesKilledPhaseCounter = 0;
         private float _phaseTimeoutStartTime = 0f;
         private float _phaseTimeoutEndTime = 0f;
         private PhaseType _currentPhaseType;
         private int _currentPhaseCompletionEnemies;
         private float _currentPhaseBossHealth;
 
+        private int _totalNonBossPhases = 0;
+
         public int EnemiesKilledCounter
         {
-            get => _enemiesKilledCounter;
-            set => _enemiesKilledCounter = value;
+            get => _enemiesKilledPhaseCounter;
+            set => _enemiesKilledPhaseCounter = value;
         }
 
         public event Action OnPhaseCompletion;
         public event Action<float> OnPhaseLevelChange;
+        public event Action<float> OnTotalProgressChange;
         private float _phaseProgressLevel = 0f;
         private float _overallProgressLevel = 0f;
 
@@ -52,6 +56,9 @@ namespace Module.Game.Level
             {
                 _phaseProgressLevel = Mathf.Clamp(value, 0f, 1f);
                 OnPhaseLevelChange?.Invoke(_phaseProgressLevel);
+                var totalProgressLevel = (float) _currentPhaseIndex / _totalNonBossPhases +
+                                         _phaseProgressLevel / _totalNonBossPhases;
+                OnTotalProgressChange?.Invoke(totalProgressLevel);
                 if (_phaseProgressLevel >= 1f)
                 {
                     OnPhaseCompletion?.Invoke();
@@ -66,6 +73,8 @@ namespace Module.Game.Level
             _currentPhaseIndex = -1;
 
             _chunksController = new ChunkController(chunksContainer, _levelParams);
+
+            _totalNonBossPhases = Math.Max(_levelParams.Phases.Count - 1, 1);
 
             // Load prefab resources
             foreach (var phaseParams in _levelParams.Phases)
@@ -98,12 +107,10 @@ namespace Module.Game.Level
                 return;
             }
 
-            var nextPhaseParams = _levelParams.Phases[_currentPhaseIndex];
+            _enemiesKilledPhaseCounter = 0;
 
-            if (_currentPhaseIndex == _levelParams.Phases.Count)
-            {
-                var bossGameObject = Instantiate(bossPrefab, bossContainer);
-            }
+            // conditions of finishing phase
+            var nextPhaseParams = _levelParams.Phases[_currentPhaseIndex];
 
             _currentPhaseType = nextPhaseParams.PhaseType;
             _currentPhaseCompletionEnemies = nextPhaseParams.CompleteConditionEnemies != 0
@@ -115,21 +122,57 @@ namespace Module.Game.Level
             _phaseTimeoutStartTime = Time.time;
             _phaseTimeoutEndTime = Time.time + completeConditionDuration;
 
+            _obstacleController.SpawnActive = nextPhaseParams.SpawnObstacles;
+
             // set enemy type
-            if (_currentPhaseIndex == 1)
+            if (_currentPhaseIndex == 0)
             {
-                GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee;
                 GameModule.Instance.Player.ChangeWeapon(WeaponType.None);
+            }
+            else if (_currentPhaseIndex == 1)
+            {
+                GameModule.Instance.Player.ChangeWeapon(WeaponType.Melee);
             }
             else if (_currentPhaseIndex == 2 || _currentPhaseIndex == 3)
             {
-                GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee | EnemyType.Ranged;
                 GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
             }
             else
             {
-                GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
                 GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
+            }
+
+            switch (nextPhaseParams.EnemySpawns)
+            {
+                case EnemySpawns.None:
+                {
+                    GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
+                    break;
+                }
+                case EnemySpawns.MeleeOnly:
+                {
+                    GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee;
+                    break;
+                }
+                case EnemySpawns.RangeOnly:
+                {
+                    GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Ranged;
+                    break;
+                }
+                case EnemySpawns.MeleeAndRange:
+                {
+                    GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee | EnemyType.Ranged;
+                    break;
+                }
+
+                case EnemySpawns.Boss:
+                {
+                    GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
+                    var bossGameObject = Instantiate(bossPrefab, bossContainer);
+                    bossGameObject.GetComponent<Boss>().view.ShowBoss();
+                    _obstacleController.SpawnActive = false;
+                    break;
+                }
             }
 
             _chunksController.CurrentPhaseIndex = _currentPhaseIndex;
@@ -167,7 +210,7 @@ namespace Module.Game.Level
 
                 case PhaseType.EnemiesKilled:
                 {
-                    PhaseProgressLevel = (float) _enemiesKilledCounter / _currentPhaseCompletionEnemies;
+                    PhaseProgressLevel = (float) _enemiesKilledPhaseCounter / _currentPhaseCompletionEnemies;
 
                     break;
                 }
@@ -195,7 +238,7 @@ namespace Module.Game.Level
 
                 case PhaseType.EnemiesKilled:
                 {
-                    if (_enemiesKilledCounter >= _currentPhaseCompletionEnemies)
+                    if (_enemiesKilledPhaseCounter >= _currentPhaseCompletionEnemies)
                     {
                         return true;
                     }

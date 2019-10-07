@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7438607176006735586
+--- !u!1 &5779066958013708263
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7438607176006735584}
-  - component: {fileID: 7438607176006735585}
+  - component: {fileID: 5779066958013708256}
+  - component: {fileID: 5779066958013708257}
   m_Layer: 0
-  m_Name: '[EnemySpawner]'
+  m_Name: '[BendShaderParameters]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7438607176006735584
+--- !u!4 &5779066958013708256
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7438607176006735586}
+  m_GameObject: {fileID: 5779066958013708263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7438607176006735585
+--- !u!114 &5779066958013708257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7438607176006735586}
+  m_GameObject: {fileID: 5779066958013708263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ab33613388efb4d92e36a3a19e445d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb5e6e8e387b2f41b2fcfd2967200d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceInFrontWithoutObstacles: 5
-  spawnPauseMin: 0.7
-  spawnPauseMax: 1.4
-  meleeEnemyPrefab: {fileID: 8687913692197600653, guid: 34bfceade45382648bae2db8d9a43632,
-    type: 3}
-  rangedEnemyPrefab: {fileID: 8276862314587099992, guid: efcf934ba031af64fa533b39d20c0440,
-    type: 3}
-  teethEnemyPrefab: {fileID: 0}
+  maxChange: 30
+  maxDist: 100
+  bendOrigin: {x: 0, y: 0}
+  bendAmount: {x: 0, y: 1}

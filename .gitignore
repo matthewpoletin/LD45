@@ -61,3 +61,6 @@ crashlytics-build.properties
 # External assets
 Assets/External
 Assets/External.meta
+
+AmplifyShaderEditor/
+AmplifyShaderEditor.meta
