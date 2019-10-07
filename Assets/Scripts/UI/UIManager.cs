@@ -13,6 +13,8 @@ namespace Nothing
         [SerializeField]
         private TextMeshProUGUI livesText;
 
+        [Header("Progress Bar")]
+
         [SerializeField]
         private Slider progressBarSlider;
         [SerializeField] private Image progressBarFillImage;
@@ -24,16 +26,31 @@ namespace Nothing
         [SerializeField] private Color progressBarBackgroundStartColor;
         [SerializeField] private Color progressBarBackgroundBossColor;
 
+        [Header("Instructions")]
+
         [SerializeField]
         private GameObject instructionsPanel;
 
         [SerializeField]
         private Animator instructionsPanelAnimator;
 
+        [Header("Fader")]
+        public Image faderImage = null;
+        [SerializeField]
+        private float fadeInSpeed = 1f;
+
         private bool isProgressBarFull;
 
         private Gradient progressBarGradient;
         private int progressBarStage = 0;
+
+        private void OnEnable() {
+            playerHealth.OnDamageTaken += OnPlayerDamage;
+        }
+
+        private void OnDisable() {
+            playerHealth.OnDamageTaken -= OnPlayerDamage;
+        }
 
         public void Init()
         {
@@ -51,13 +68,21 @@ namespace Nothing
 
             progressBarBackbroundImage.color = progressBarBackgroundStartColor;
 
+            FadeIn();
             ShowInstructions();
+            UpdateHealth(playerHealth.TotalHealth);
         }
 
-        private void Update()
-        {
-            if (playerHealth == null) return;
-            livesText.text = "Lives: " + playerHealth.CurrentHealth;
+        private void OnPlayerDamage(int damageAmount) {
+            UpdateHealth(playerHealth.CurrentHealth);
+        }
+
+        private void UpdateHealth(int healthAmount) {
+            livesText.text = "Lives: " + healthAmount;
+        }
+
+        private void FadeIn(){
+            faderImage.CrossFadeAlpha(0, fadeInSpeed, false);
         }
 
         public void ShowInstructions()
