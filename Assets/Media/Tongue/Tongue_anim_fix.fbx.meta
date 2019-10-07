@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b6f1c372916f0ab4f8600760f5c10570
+guid: fb492de8afba5cf4eb25ba7758e8a964
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: -6641176737478421468
-    second: start_boss_fix
+    second: death_tongue
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: start_boss_fix
+      name: death_tongue
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430Action"
       internalID: -6641176737478421468
       firstFrame: 640
-      lastFrame: 703
+      lastFrame: 738
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -100,7 +100,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -117,8 +117,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0ae6b38ed695722478f95ae96b687e22,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
