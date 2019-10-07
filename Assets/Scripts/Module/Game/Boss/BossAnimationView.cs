@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EventType = Module.Game.Events.EventType;
@@ -9,6 +10,13 @@ namespace Module.Game.BossView
     public class BossAnimationView : MonoBehaviour
     {
         [SerializeField] private Animator bossAnimator;
+        public Action OnPreAttackLeft = delegate {};
+        public Action OnPreAttackRight = delegate {};
+        public Action OnAttackLeft = delegate {};
+        public Action OnAttackRight = delegate {};
+        public Action OnAttackLeftDamage = delegate {};
+        public Action OnAttackRightDamage = delegate {};
+        public Action OnDeath = delegate {};
 
         public void ShowBoss()
         {
@@ -29,16 +37,37 @@ namespace Module.Game.BossView
             bossAnimator.SetTrigger("Death");
         }
 
-        public void AttackTrigger() {
+        public void AttackLeftTrigger() {
+            OnAttackLeft();
             GameModule.Instance.EventManager.ProcessEvent(EventType.TongueAttack);
         }
 
-        public void PreAttackTrigger() {
+        public void AttackRightTrigger() {
+            OnAttackRight();
+            GameModule.Instance.EventManager.ProcessEvent(EventType.TongueAttack);
+        }
+
+        public void PreAttackLeftTrigger() {
+            OnPreAttackLeft();
+            GameModule.Instance.EventManager.ProcessEvent(EventType.TongueAim);
+        }
+
+        public void PreAttackRightTrigger() {
+            OnPreAttackRight();
             GameModule.Instance.EventManager.ProcessEvent(EventType.TongueAim);
         }
 
         public void DeathTrigger() {
+            OnDeath();
             GameModule.Instance.EventManager.ProcessEvent(EventType.TongueDeath);
+        }
+
+        public void OnAttackLeftDamageTrigger() {
+            OnAttackLeftDamage();
+        }
+
+        public void OnAttackRightDamageTrigger() {
+            OnAttackRightDamage();
         }
     }
 }

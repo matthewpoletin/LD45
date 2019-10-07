@@ -112,15 +112,15 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: AttackTrigger
+        functionName: AttackRightTrigger
         data: 
         objectReferenceParameter: {fileID: 777260262343308435, guid: a0edb882078cc264aa519195d8227202,
           type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0
-        functionName: LeftAttackStarted
+      - time: 0.32747266
+        functionName: OnAttackRightDamageTrigger
         data: 
         objectReferenceParameter: {fileID: 777260262343308435, guid: a0edb882078cc264aa519195d8227202,
           type: 3}
@@ -157,7 +157,15 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: AttackTrigger
+        functionName: AttackLeftTrigger
+        data: 
+        objectReferenceParameter: {fileID: 777260262343308435, guid: a0edb882078cc264aa519195d8227202,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.32967007
+        functionName: OnAttackLeftDamageTrigger
         data: 
         objectReferenceParameter: {fileID: 777260262343308435, guid: a0edb882078cc264aa519195d8227202,
           type: 3}
@@ -194,7 +202,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: PreAttackTrigger
+        functionName: PreAttackLeftTrigger
         data: 
         objectReferenceParameter: {fileID: 777260262343308435, guid: a0edb882078cc264aa519195d8227202,
           type: 3}
@@ -231,7 +239,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: PreAttackTrigger
+        functionName: PreAttackRightTrigger
         data: 
         objectReferenceParameter: {fileID: 777260262343308435, guid: a0edb882078cc264aa519195d8227202,
           type: 3}
