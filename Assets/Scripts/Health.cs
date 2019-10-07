@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth {get; private set; }
     public Action<int> OnDamageTaken =  delegate {};
     public Action OnHealthDepleated = delegate {};
+    public Action<float> onHealthChanged = null;
 
     public float invincibilityTime = 0;
 
@@ -28,6 +30,7 @@ public class Health : MonoBehaviour
 
         CurrentHealth -= damageTaken;
         OnDamageTaken(damageTaken);
+        onHealthChanged?.Invoke((float) CurrentHealth / TotalHealth);
 
         if (CurrentHealth <= 0)
         {

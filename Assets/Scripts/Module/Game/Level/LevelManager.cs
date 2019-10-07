@@ -181,8 +181,11 @@ namespace Module.Game.Level
         {
             yield return new WaitForSeconds(delay);
             var bossGameObject = Instantiate(bossPrefab, bossContainer);
-            bossGameObject.GetComponent<Boss>().view.ShowBoss();
-            _obstacleController.SpawnActive = false;
+            var bossController = bossGameObject.GetComponent<Boss>();
+            var bossView = bossController.view;
+            bossView.ShowBoss();
+            OnTotalProgressChange -= GameModule.Instance.UiManager.UpdateProgress;
+            bossController.Health.onHealthChanged += GameModule.Instance.UiManager.UpdateProgress;
         }
 
         public void Tick(float deltaTime)

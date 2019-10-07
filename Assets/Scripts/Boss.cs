@@ -38,13 +38,18 @@ namespace Nothing {
         [SerializeField, HideInInspector]
         private Health health;
 
+        public Health Health => health;
+
         private void Start() {
             StartCoroutine(AttackSequence());
         }
 
-        private IEnumerator AttackSequence() {
+        private void Awake()
+        {
             health = GetComponent<Health>();
+        }
 
+        private IEnumerator AttackSequence() {
             yield return new WaitForSeconds(posing1Duration);
 
             yield return LeftAttack();
@@ -61,7 +66,6 @@ namespace Nothing {
                 yield return new WaitForSeconds(durationBetweenAttacks);
             }
         }
-        
 
         private IEnumerator LeftAttack() {
             view.AttackLeft();
