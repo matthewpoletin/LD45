@@ -124,22 +124,23 @@ namespace Module.Game.Level
 
             _obstacleController.SpawnActive = nextPhaseParams.SpawnObstacles;
 
-            // set enemy type
-            if (_currentPhaseIndex == 0)
+            switch (nextPhaseParams.CharacterWeapon)
             {
-                GameModule.Instance.Player.ChangeWeapon(WeaponType.None);
-            }
-            else if (_currentPhaseIndex == 1)
-            {
-                GameModule.Instance.Player.ChangeWeapon(WeaponType.Melee);
-            }
-            else if (_currentPhaseIndex == 2 || _currentPhaseIndex == 3)
-            {
-                GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
-            }
-            else
-            {
-                GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
+                case CharacterWeapon.None:
+                {
+                    GameModule.Instance.Player.ChangeWeapon(WeaponType.None);
+                    break;
+                }
+                case CharacterWeapon.Melee:
+                {
+                    GameModule.Instance.Player.ChangeWeapon(WeaponType.Melee);
+                    break;
+                }
+                case CharacterWeapon.Range:
+                {
+                    GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
+                    break;
+                }
             }
 
             switch (nextPhaseParams.EnemySpawns)

@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d5fe133f5ca2a45e680cfd52a7ca403c, type: 2}
   movementSpeed: 19.965
   spawnObstacles: 0
+  characterWeapon: 2
   _enemySpawns: 4
   phaseType: 2
   completeConditionEnemies: 0
