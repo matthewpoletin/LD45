@@ -17,4 +17,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3cebddb8a92764dbc9888316aa3adbc8, type: 3}
   - {fileID: 8300000, guid: 609465ace6f584eb2b90ea9fe491daeb, type: 3}
   - {fileID: 8300000, guid: b4376ad50132d4cd7b5eb2a5ef9d0e25, type: 3}
-  vfx: {fileID: 0}
+  vfx: {fileID: 11400000, guid: cc8e67e2794644aa0aff008423ba607d, type: 2}
+  isBoss: 0
