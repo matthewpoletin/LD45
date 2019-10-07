@@ -86,7 +86,14 @@ MonoBehaviour:
   damage: 0
   dieInColissionWithObstacles: 0
   dieInColissionWithPlayer: 0
+  avoidObstacles: 0
+  maxDistanceToObstacleWhenChangingLine: 3
+  lineChangeDuration: 0.3
   health: {fileID: 0}
+  currentLine: 0
+  targetLine: 0
+  currentVelocity: 0
+  isChangingLine: 0
 --- !u!65 &2597763867326182706
 BoxCollider:
   m_ObjectHideFlags: 0

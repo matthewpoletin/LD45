@@ -11,6 +11,7 @@ namespace Nothing
         public int damage = 1;
         public bool dieInColissionWithObstacles = true;
         public bool dieInColissionWithPlayer = true;
+        public bool avoidObstacles = true;
         public float maxDistanceToObstacleWhenChangingLine = 3;
         public float lineChangeDuration = .3f;
 
