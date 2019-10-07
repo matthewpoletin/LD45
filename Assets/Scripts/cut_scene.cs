@@ -8,12 +8,10 @@ using UnityEngine.SceneManagement;
 public class cut_scene : MonoBehaviour
 {
     public PlayableDirector playableDirector;
-    public GameObject text;
 
     public void TimeLine()
     {
             playableDirector.Pause();
-            text.SetActive(true);
     }
 
 
@@ -22,7 +20,6 @@ public class cut_scene : MonoBehaviour
         if (Input.GetKey("f"))
         {
             playableDirector.Play();
-            text.SetActive(false);
         }
     }
 
