@@ -94,5 +94,6 @@ Material:
     - _ZWrite: 0
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.7882353}
+    - _BendOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.6}
     - _EmissionColor: {r: 0.764151, g: 0.5409216, b: 0.43137255, a: 1}

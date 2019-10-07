@@ -73,11 +73,7 @@ namespace Nothing {
 
             yield return sideAttack.Attack(BossSideAttackVariant.RightAndMiddle);
         }
-
-        private void Update() {
-            Debug.Log(health.CurrentHealth);
-        }
-
+        
         private IEnumerator TeethAttack() {
             yield return new WaitForSeconds(teethAttackDuration);
         }
