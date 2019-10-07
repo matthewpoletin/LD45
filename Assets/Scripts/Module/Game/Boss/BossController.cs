@@ -20,7 +20,7 @@ namespace Module.Game.Boss
         {
             GameModule.Instance.LevelManager.EnemiesKilledCounter++;
             GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
-            view.OnDeath();
+            view.Death();
             Destroy(gameObject, 10f);
         }
 
