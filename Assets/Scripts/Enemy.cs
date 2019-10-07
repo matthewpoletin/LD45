@@ -45,6 +45,9 @@ namespace Nothing
         }
 
         private void Update() {
+            if (!avoidObstacles)
+                return;
+
             if (isChangingLine)
                 UpdateLinePosition();
             else {
