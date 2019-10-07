@@ -19,7 +19,10 @@ namespace Nothing
         Bazooka
     }
 
-    public class Player : MonoBehaviour {
+    public class Player : MonoBehaviour
+    {
+        public bool IsActive { get; set; } = true;
+
         [field: SerializeField, HideInInspector]
         public Line CurrentLine { get; private set; } = Line.Middle;
         [field: SerializeField, HideInInspector]
@@ -28,7 +31,6 @@ namespace Nothing
         public bool IsChangingLine { get; private set; } = false;
         [field: SerializeField, HideInInspector]
         public bool IsJumping { get; private set; } = false;
-
 
         [SerializeField]
         private Health playerHealth = null;
@@ -83,10 +85,19 @@ namespace Nothing
         }
 
         public void Attack() {
+            if (!IsActive)
+            {
+                return;
+            }
             CurrentWeapon?.Attack();
         } 
 
         public void Jump() {
+            if (!IsActive)
+            {
+                return;
+            }
+            
             if (IsJumping)
                 return;
 
@@ -98,6 +109,11 @@ namespace Nothing
         }
 
         public void Left() {
+            if (!IsActive)
+            {
+                return;
+            }
+            
             if (CurrentLine != TargetLine)
                 return;
 
@@ -113,6 +129,11 @@ namespace Nothing
         }
 
         public void Right() {
+            if (!IsActive)
+            {
+                return;
+            }
+            
             if (CurrentLine != TargetLine)
                 return;
 

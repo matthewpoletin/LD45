@@ -21,6 +21,7 @@ namespace Module.Game.Boss
             GameModule.Instance.LevelManager.EnemiesKilledCounter++;
             GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
             view.Death();
+            GameModule.Instance.Player.IsActive = false;
             view.OnDeath += () =>
             {
                 GameModule.Instance.Player.transform.GetComponent<Rigidbody>().velocity = Vector3.forward * 10f;
