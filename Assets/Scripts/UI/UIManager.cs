@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 namespace Nothing
@@ -10,8 +9,8 @@ namespace Nothing
         [SerializeField]
         private Health playerHealth;
 
-        [SerializeField]
-        private TextMeshProUGUI livesText;
+        [SerializeField] private RectTransform heartsContainer;
+        [SerializeField] private GameObject heartIcon;
 
         [Header("Progress Bar")]
 
@@ -38,11 +37,13 @@ namespace Nothing
         public Image faderImage = null;
         [SerializeField]
         private float fadeInSpeed = 1f;
+        
+        private static readonly int Instructions = Animator.StringToHash("ShowInstructions");
 
-        private bool isProgressBarFull;
-
-        private Gradient progressBarGradient;
-        private int progressBarStage = 0;
+        private bool _isProgressBarFull;
+        private Gradient _progressBarGradient;
+        private int _progressBarStage = 0;
+        private List<GameObject> _heartIcons = new List<GameObject>();
 
         private void OnEnable() {
             playerHealth.OnDamageTaken += OnPlayerDamage;
@@ -54,7 +55,7 @@ namespace Nothing
 
         public void Init()
         {
-            progressBarGradient = new Gradient();
+            _progressBarGradient = new Gradient();
             var gradientColorKeys = new GradientColorKey[2];
             gradientColorKeys[0].color = progressBarStartColor;
             gradientColorKeys[0].time = 0.0f;
@@ -64,12 +65,13 @@ namespace Nothing
 
             var gradientAlphaKeys = new GradientAlphaKey[0];
 
-            progressBarGradient.SetKeys(gradientColorKeys, gradientAlphaKeys);
+            _progressBarGradient.SetKeys(gradientColorKeys, gradientAlphaKeys);
 
             progressBarBackbroundImage.color = progressBarBackgroundStartColor;
 
             FadeIn();
             ShowInstructions();
+            SetUpHealthIcons(playerHealth.TotalHealth);
             UpdateHealth(playerHealth.TotalHealth);
         }
 
@@ -78,7 +80,24 @@ namespace Nothing
         }
 
         private void UpdateHealth(int healthAmount) {
-            livesText.text = "Lives: " + healthAmount;
+            for (int i = 0; i < playerHealth.TotalHealth; i++)
+            {
+                if (i >= healthAmount)
+                    _heartIcons[i].SetActive(false);
+                else
+                {
+                    _heartIcons[i].SetActive(true);
+                }
+            }
+        }
+
+        private void SetUpHealthIcons(int totalHealth)
+        {
+            for (int i = 0; i < totalHealth; i++)
+            {
+                GameObject heartIconOb = Instantiate(heartIcon, heartsContainer);
+                _heartIcons.Add(heartIconOb);
+            }
         }
 
         private void FadeIn(){
@@ -88,22 +107,22 @@ namespace Nothing
         public void ShowInstructions()
         {
             instructionsPanel.SetActive(true);
-            instructionsPanelAnimator.SetTrigger("ShowInstructions");
+            instructionsPanelAnimator.SetTrigger(Instructions);
         }
 
         public void UpdateProgress(float progressAmount)
         {
             progressBarSlider.value = progressAmount;
-            if (progressBarStage == 0)
-                progressBarFillImage.color = progressBarGradient.Evaluate(progressAmount); 
-            if (progressAmount >= 0.99f && !isProgressBarFull) {
+            if (_progressBarStage == 0)
+                progressBarFillImage.color = _progressBarGradient.Evaluate(progressAmount); 
+            if (progressAmount >= 0.99f && !_isProgressBarFull) {
                 ProgressBarFull();
             }
         }
 
         private void ProgressBarFull() {
-            progressBarStage = 1;
-            isProgressBarFull = true;
+            _progressBarStage = 1;
+            _isProgressBarFull = true;
             progressBarBackbroundImage.color = progressBarBackgroundBossColor;
         }
     }

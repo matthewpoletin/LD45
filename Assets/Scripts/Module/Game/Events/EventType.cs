@@ -14,5 +14,6 @@ namespace Module.Game.Events
         TongueAim = 6,
         TongueAttack = 7,
         TongueDeath = 8,
+        EnemyDeath = 9,
     }
 }

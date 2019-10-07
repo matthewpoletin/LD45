@@ -2,6 +2,7 @@
 using System.Collections;
 using Module.Game;
 using Module.Game.Level.Obstacles;
+using EventType = Module.Game.Events.EventType;
 
 namespace Nothing
 {
@@ -37,6 +38,7 @@ namespace Nothing
         void OnEnemyDestroyed()
         {
             GameModule.Instance.LevelManager.EnemiesKilledCounter++;
+            GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
             Destroy(gameObject);
         }
 

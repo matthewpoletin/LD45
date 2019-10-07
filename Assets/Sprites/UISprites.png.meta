@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -8660343245451693900
     second: ui_progress_bar_mask
+  - first:
+      213: -7452048671307297935
+    second: ui_heart
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -259,6 +262,27 @@ TextureImporter:
       bones: []
       spriteID: 60f5d4516bc8942f5b4510eb18b7b8d0
       internalID: -8660343245451693900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_heart
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 93
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b11fbc7ea4f61f41b08da41a8b45111
+      internalID: -7452048671307297935
       vertices: []
       indices: 
       edges: []
