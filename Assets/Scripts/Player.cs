@@ -51,10 +51,6 @@ namespace Nothing
         [SerializeField, HideInInspector]
         private float velocityY = 0;
 
-        private void Awake() {
-            ChangeWeapon(defaultWeaponType);
-        }
-
         private void OnEnable() {
             playerHealth.OnHealthDepleated += OnHealthDepleated;
             playerHealth.OnDamageTaken += OnDamageTaken;
