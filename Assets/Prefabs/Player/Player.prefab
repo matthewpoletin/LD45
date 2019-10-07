@@ -150,11 +150,10 @@ MonoBehaviour:
   meleeWeapon: {fileID: 8068746503436179702}
   rangedWeapon: {fileID: 7352452761323978059}
   bazookaWeapon: {fileID: 0}
-  lineWidth: 3
   defaultWeaponType: 0
   lineChangeDuration: 0.1
   jumpVelocity: 20
-  gravity: 1
+  gravity: 75
   currentVelocity: 0
   velocityY: 0
 --- !u!114 &1259888558302218749

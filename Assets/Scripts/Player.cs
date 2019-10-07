@@ -189,7 +189,7 @@ namespace Nothing
         }
 
         private void UpdateYPosition() {
-            velocityY -= gravity;
+            velocityY -= gravity * Time.deltaTime;
             var newY = transform.localPosition.y + Time.deltaTime * velocityY;
 
             if (newY < 0)
