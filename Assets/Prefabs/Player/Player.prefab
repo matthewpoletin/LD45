@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a80bbe2d220d00449d8c1764d6b74e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 4096557242654918384}
   <CurrentLine>k__BackingField: 1
   <TargetLine>k__BackingField: 1
   <IsChangingLine>k__BackingField: 0
@@ -467,6 +468,12 @@ PrefabInstance:
 --- !u!4 &6220569335322422154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: fbf952be89cc6544796f3958ba6528af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1380725009790337168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4096557242654918384 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: fbf952be89cc6544796f3958ba6528af,
     type: 3}
   m_PrefabInstance: {fileID: 1380725009790337168}
   m_PrefabAsset: {fileID: 0}

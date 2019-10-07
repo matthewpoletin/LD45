@@ -1,4 +1,5 @@
-﻿using Module.Game;
+﻿using System.Collections;
+using Module.Game;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,8 @@ namespace Nothing
 
     public class Player : MonoBehaviour
     {
+        [SerializeField] private Animator animator = null;
+
         public bool IsActive { get; set; } = true;
 
         [field: SerializeField, HideInInspector]
@@ -70,6 +73,15 @@ namespace Nothing
         }
 
         public void ChangeWeapon(WeaponType weaponType) {
+            if (weaponType == WeaponType.Bazooka || weaponType == WeaponType.Ranged)
+            {
+                animator.SetBool("WithSword", false);
+            }
+            else
+            {
+                animator.SetBool("WithSword", true);
+            }
+            
             if (CurrentWeapon != null) {
                 CurrentWeapon.gameObject.SetActive(false);
             }
@@ -89,6 +101,8 @@ namespace Nothing
             {
                 return;
             }
+
+            animator.SetTrigger("Attack");
             CurrentWeapon?.Attack();
         } 
 
@@ -201,7 +215,15 @@ namespace Nothing
             transform.position = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
         }
         
-        private void OnHealthDepleated() {
+        private void OnHealthDepleated()
+        {
+            animator.SetTrigger("Death");
+            StartCoroutine(StartSceneAfter());
+        }
+
+        private IEnumerator StartSceneAfter()
+        {
+            yield return new WaitForSeconds(0.33f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
