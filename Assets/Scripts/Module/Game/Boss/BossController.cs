@@ -21,6 +21,11 @@ namespace Module.Game.Boss
             GameModule.Instance.LevelManager.EnemiesKilledCounter++;
             GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
             view.Death();
+            view.OnDeath += () =>
+            {
+                GameModule.Instance.Player.transform.GetComponent<Rigidbody>().velocity = Vector3.forward * 10f;
+                GameModule.Instance.UiManager.EndGame();
+            };
             Destroy(gameObject, 10f);
         }
 

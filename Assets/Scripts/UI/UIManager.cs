@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Nothing
 {
     public class UIManager : MonoBehaviour
     {
+        [SerializeField] private RectTransform restartContainer = null;
+        [SerializeField] private Button restartButton = null;
+        [SerializeField] private Text restartText = null;
+
         [SerializeField]
         private Health playerHealth;
 
@@ -45,8 +51,31 @@ namespace Nothing
         private int _progressBarStage = 0;
         private List<GameObject> _heartIcons = new List<GameObject>();
 
+        private void Awake()
+        {
+            restartButton.onClick.AddListener(() =>
+            {
+                SceneManager.LoadScene("Game");
+            });
+            restartContainer.gameObject.SetActive(false);
+        }
+
         private void OnEnable() {
             playerHealth.OnDamageTaken += OnPlayerDamage;
+        }
+
+        private static string[] _strings =
+        {
+            "In the beginning there nothing was.",
+            "When start with nothing, run. Because",
+            "Bad tongue is coming, letters near.",
+            "You run, they hunt you. They are here.",
+        };
+
+        public void EndGame()
+        {
+            restartText.text = _strings[Random.Range(0, _strings.Length - 1)];
+            restartContainer.gameObject.SetActive(true);
         }
 
         private void OnDisable() {
