@@ -20,8 +20,8 @@ namespace Module.Game.Boss
         {
             GameModule.Instance.LevelManager.EnemiesKilledCounter++;
             GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
-            view.Death();
             GameModule.Instance.Player.IsActive = false;
+            view.Death();
             view.OnDeath += () =>
             {
                 GameModule.Instance.Player.transform.GetComponent<Rigidbody>().velocity = Vector3.forward * 10f;
@@ -71,10 +71,10 @@ namespace Module.Game.Boss
                 switch (rndAttack)
                 {
                     case 0:
-                        yield return LeftAttack();
+                        LeftAttack();
                         break;
                     case 1:
-                        yield return RightAttack();
+                        RightAttack();
                         break;
 //                    TODO: Add teeth attack
 //                    case 2:
@@ -86,15 +86,15 @@ namespace Module.Game.Boss
             }
         }
 
-        private IEnumerator LeftAttack() {
+        private void LeftAttack() {
             view.AttackLeft();
 
-            yield return new WaitForSeconds(attackDuration);
+//            yield return new WaitForSeconds(attackDuration);
         }
-        private IEnumerator RightAttack() {
+        private void RightAttack() {
             view.AttackRight();
 
-            yield return new WaitForSeconds(attackDuration);
+//            yield return new WaitForSeconds(attackDuration);
         }
         
         private IEnumerator TeethAttack() {
