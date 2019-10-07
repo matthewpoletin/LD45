@@ -12,6 +12,11 @@ namespace Nothing
         [SerializeField] private Button restartButton = null;
         [SerializeField] private Text restartText = null;
 
+        public void OnButtonClick()
+        {
+            SceneManager.LoadScene("Game");
+        }
+        
         [SerializeField]
         private Health playerHealth;
 
@@ -53,10 +58,6 @@ namespace Nothing
 
         private void Awake()
         {
-            restartButton.onClick.AddListener(() =>
-            {
-                SceneManager.LoadScene("Game");
-            });
             restartContainer.gameObject.SetActive(false);
         }
 
