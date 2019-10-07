@@ -13,6 +13,8 @@ namespace Module.Game.Level.Obstacles
 
         private float _spawnCooldownTime = 0f;
 
+        public bool SpawnActive { private get; set; } = true;
+
         public ObstacleController(ObstacleGroupParams obstacleGroupParams, Transform obstacleContainer)
         {
             _obstacleGroupParams = obstacleGroupParams;
@@ -21,6 +23,11 @@ namespace Module.Game.Level.Obstacles
 
         public void Tick(float deltaTime)
         {
+            if (!SpawnActive)
+            {
+                return;
+            }
+            
             if (Time.time > _spawnCooldownTime)
             {
                 var obstacle = GetRandomObstacle();

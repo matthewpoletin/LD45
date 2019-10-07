@@ -108,11 +108,6 @@ namespace Module.Game.Level
 
             var nextPhaseParams = _levelParams.Phases[_currentPhaseIndex];
 
-            if (_currentPhaseIndex == _levelParams.Phases.Count)
-            {
-                var bossGameObject = Instantiate(bossPrefab, bossContainer);
-            }
-
             _currentPhaseType = nextPhaseParams.PhaseType;
             _currentPhaseCompletionEnemies = nextPhaseParams.CompleteConditionEnemies != 0
                 ? nextPhaseParams.CompleteConditionEnemies
@@ -124,20 +119,34 @@ namespace Module.Game.Level
             _phaseTimeoutEndTime = Time.time + completeConditionDuration;
 
             // set enemy type
-            if (_currentPhaseIndex == 1)
+            if (_currentPhaseIndex == 0)
+            {
+                GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
+                GameModule.Instance.Player.ChangeWeapon(WeaponType.None);
+                _obstacleController.SpawnActive = true;
+            }
+            else if (_currentPhaseIndex == 1)
             {
                 GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee;
                 GameModule.Instance.Player.ChangeWeapon(WeaponType.None);
+                _obstacleController.SpawnActive = true;
             }
             else if (_currentPhaseIndex == 2 || _currentPhaseIndex == 3)
             {
                 GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.Melee | EnemyType.Ranged;
                 GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
+                _obstacleController.SpawnActive = true;
             }
             else
             {
                 GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
                 GameModule.Instance.Player.ChangeWeapon(WeaponType.Ranged);
+                _obstacleController.SpawnActive = false;
+            }
+
+            if (_currentPhaseIndex == _levelParams.Phases.Count - 1)
+            {
+                var bossGameObject = Instantiate(bossPrefab, bossContainer);
             }
 
             _chunksController.CurrentPhaseIndex = _currentPhaseIndex;

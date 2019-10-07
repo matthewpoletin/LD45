@@ -133,7 +133,7 @@ namespace Nothing
         }
 
         public void Humiliate() {
-            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerHumiliate, transform, transform.position);
+            GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerHumiliate, transform, transform.position + Vector3.up * 1f);
         }
         private void OnLineChange()
         {
