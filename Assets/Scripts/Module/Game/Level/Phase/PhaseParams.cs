@@ -29,7 +29,7 @@ namespace Module.Game.Level.Phase
         [SerializeField] private List<ChunkParams> chunks = null;
         [SerializeField] private float movementSpeed = 0;
         [SerializeField] private bool spawnObstacles = true;
-        [SerializeField] private CharacterWeapon characterWeapon = 0;
+        [SerializeField] private CharacterWeapon characterWeapon = CharacterWeapon.None;
         [SerializeField] private EnemySpawns _enemySpawns = EnemySpawns.None;
         [SerializeField] private PhaseType phaseType = PhaseType.Timeout;
         [SerializeField] private int completeConditionEnemies = 0;

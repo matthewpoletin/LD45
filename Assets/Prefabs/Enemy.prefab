@@ -112,6 +112,7 @@ MonoBehaviour:
   damage: 1
   dieInColissionWithObstacles: 1
   dieInColissionWithPlayer: 1
+  avoidObstacles: 1
   maxDistanceToObstacleWhenChangingLine: 3
   lineChangeDuration: 0.3
   health: {fileID: 0}
@@ -238,7 +239,7 @@ PrefabInstance:
     - target: {fileID: -6057140222963153312, guid: e8daf310fe70c7a479183d65588a0e82,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8daf310fe70c7a479183d65588a0e82, type: 3}
