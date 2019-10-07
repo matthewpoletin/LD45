@@ -92,13 +92,14 @@ namespace Module.Audio
         }
 
         private void CreateAudioObject(AudioClip clip, AudioMixerGroup mixerGroup) {
-                        var soundObject = new GameObject("SFX");
+            var soundObject = new GameObject("SFX");
             var audSrc = soundObject.AddComponent<AudioSource>();
 
             audSrc.outputAudioMixerGroup = mixerGroup;
             audSrc.clip = clip;
             audSrc.Play();
             soundObject.name = clip.name;
+            soundObject.transform.parent = transform;
             Destroy(soundObject, clip.length);
         }
     }
