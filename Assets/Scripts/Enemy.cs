@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Module.Game;
 using Module.Game.Level.Obstacles;
 using EventType = Module.Game.Events.EventType;
+using Random = UnityEngine.Random;
 
 namespace Nothing
 {
@@ -16,7 +18,7 @@ namespace Nothing
         public float maxDistanceToObstacleWhenChangingLine = 3;
         public float lineChangeDuration = .3f;
 
-        [SerializeField, HideInInspector]
+        [SerializeField]
         private Health health;
         [SerializeField, HideInInspector]
         private int currentLine;
@@ -27,7 +29,9 @@ namespace Nothing
         [SerializeField, HideInInspector]
         private bool isChangingLine = false;
 
-        private void Start() {
+        public Health Health => health;
+
+        private void Awake() {
             health = GetComponent<Health>();
 
             health.OnHealthDepleated += OnEnemyDestroyed;
@@ -35,9 +39,8 @@ namespace Nothing
             currentLine = targetLine = CalculateCurrentLine();
         }
 
-        void OnEnemyDestroyed()
+        public virtual void OnEnemyDestroyed()
         {
-            GameModule.Instance.LevelManager.EnemiesKilledCounter++;
             GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
             Destroy(gameObject);
         }

@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633209058554840152}
-  - component: {fileID: 8060602185889745433}
-  - component: {fileID: 2407877702599951060}
-  - component: {fileID: 7373952005692829002}
-  - component: {fileID: 2597763867326182706}
   - component: {fileID: 8261416099067972328}
   - component: {fileID: 785346369}
+  - component: {fileID: 2597763867326182706}
+  - component: {fileID: 7039138163237095787}
+  - component: {fileID: 3184982962701153932}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777260262343308435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5622463, y: -2.2769222, z: -3.4232483}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947899799406674180}
@@ -38,75 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8060602185889745433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777260262343308435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67538f0cfa72840558c8e2413b2833de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalHealth: 100
-  invincibilityTime: 0
---- !u!114 &2407877702599951060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777260262343308435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6872c1b90c615e5448de36d58bdab692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posing1Duration: 5
-  posing2Duration: 3
-  durationBetweenAttacks: 0.5
-  teethAttackDuration: 6
-  sideAttack: {fileID: 4947899799406674181}
-  view: {fileID: 3786473261826747417}
-  health: {fileID: 0}
---- !u!114 &7373952005692829002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777260262343308435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d5f7d5edc5da843873fc7c623c0a57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  dieInColissionWithObstacles: 0
-  dieInColissionWithPlayer: 0
-  avoidObstacles: 0
-  maxDistanceToObstacleWhenChangingLine: 3
-  lineChangeDuration: 0.3
-  health: {fileID: 0}
-  currentLine: 0
-  targetLine: 0
-  currentVelocity: 0
-  isChangingLine: 0
---- !u!65 &2597763867326182706
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777260262343308435}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9, y: 40.94, z: 20.72}
-  m_Center: {x: 0, y: 0, z: 3.25}
 --- !u!54 &8261416099067972328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -220,6 +150,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2597763867326182706
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777260262343308435}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 40.94, z: 20.72}
+  m_Center: {x: 0, y: 0, z: 3.25}
+--- !u!114 &7039138163237095787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777260262343308435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67538f0cfa72840558c8e2413b2833de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 100
+  invincibilityTime: 0
+--- !u!114 &3184982962701153932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777260262343308435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6872c1b90c615e5448de36d58bdab692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  dieInColissionWithObstacles: 0
+  dieInColissionWithPlayer: 0
+  avoidObstacles: 0
+  maxDistanceToObstacleWhenChangingLine: 3
+  lineChangeDuration: 0.3
+  health: {fileID: 7039138163237095787}
+  currentLine: 0
+  targetLine: 0
+  currentVelocity: 0
+  isChangingLine: 0
+  posing1Duration: 5
+  posing2Duration: 3
+  durationBetweenAttacks: 0.5
+  teethAttackDuration: 6
+  sideAttack: {fileID: 4947899799406674181}
+  view: {fileID: 3786473261826747417}
 --- !u!1001 &1881577717063312928
 PrefabInstance:
   m_ObjectHideFlags: 0

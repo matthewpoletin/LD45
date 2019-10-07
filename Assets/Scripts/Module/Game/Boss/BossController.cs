@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Nothing;
 using UnityEngine;
+using EventType = Module.Game.Events.EventType;
 
 namespace Module.Game.Boss
 {
@@ -13,9 +14,16 @@ namespace Module.Game.Boss
     //    Teeth
     //}
 
-    [RequireComponent(typeof(Health))]
-    public class BossController : MonoBehaviour
+    public class BossController : Enemy
     {
+        public override void OnEnemyDestroyed()
+        {
+            GameModule.Instance.LevelManager.EnemiesKilledCounter++;
+            GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
+            view.OnDeath();
+            Destroy(gameObject, 10f);
+        }
+
         public float posing1Duration = 5;
         public float posing2Duration = 3;
 
@@ -31,18 +39,9 @@ namespace Module.Game.Boss
 
         public BossAnimationView view;
 
-        [SerializeField, HideInInspector] private Health health;
-
-        public Health Health => health;
-
         private void Start()
         {
             StartCoroutine(AttackSequence());
-        }
-
-        private void Awake()
-        {
-            health = GetComponent<Health>();
         }
 
         private IEnumerator AttackSequence()
@@ -55,7 +54,7 @@ namespace Module.Game.Boss
 
             yield return RightAttack();
 
-            while (health.CurrentHealth > 0)
+            while (Health.CurrentHealth > 0)
             {
                 yield return TeethAttack();
                 yield return LeftAttack();
