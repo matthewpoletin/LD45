@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventType: 3
   clips:
-  - {fileID: 8300000, guid: 3d39b63ed392c492cb13bc667b22e101, type: 3}
+  - {fileID: 8300000, guid: d310204626cd64e95a9851edef4caab3, type: 3}
   vfx: {fileID: 11400000, guid: 70936a8b23bb04689a0d53d1d901decd, type: 2}
+  isBoss: 0
