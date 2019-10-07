@@ -441,16 +441,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000,
         type: 0}
-    - target: {fileID: 7438607176006735585, guid: 21baf7968f396904bb2e09673d51b2ed,
-        type: 3}
-      propertyPath: spawnPauseMin
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7438607176006735585, guid: 21baf7968f396904bb2e09673d51b2ed,
-        type: 3}
-      propertyPath: spawnPauseMax
-      value: 1.4
-      objectReference: {fileID: 0}
     - target: {fileID: 7438607176006735584, guid: 21baf7968f396904bb2e09673d51b2ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -887,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 1259888558302218744, guid: 0ea0c257d40902149bcf7892ada9663d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8.63
       objectReference: {fileID: 0}
     - target: {fileID: 1259888558302218744, guid: 0ea0c257d40902149bcf7892ada9663d,
         type: 3}

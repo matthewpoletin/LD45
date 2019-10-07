@@ -39,8 +39,7 @@ namespace Nothing
         public MeleeWeapon meleeWeapon;
         public RangedWeapon rangedWeapon;
         public BazookaWeapon bazookaWeapon;
-
-        public float lineWidth = 3;
+        
         public WeaponType defaultWeaponType;
         public float lineChangeDuration = 1;
         public float jumpVelocity = 10;
@@ -152,6 +151,7 @@ namespace Nothing
         private bool ApproxEqual(float a, float b, float tolerance) => Mathf.Abs(a - b) < tolerance;
 
         private void UpdateLinePosition() {
+            var lineWidth = GameModule.Instance.GameParams.lineWidth;
             var targetX = TargetLine == Line.Left ? -lineWidth :
                         TargetLine == Line.Middle ? 0 :
                         TargetLine == Line.Right ? lineWidth : 0;

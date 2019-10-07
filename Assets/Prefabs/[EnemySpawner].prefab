@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ab33613388efb4d92e36a3a19e445d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPauseMin: 2
-  spawnPauseMax: 5
+  distanceInFrontWithoutObstacles: 5
+  spawnPauseMin: 0.7
+  spawnPauseMax: 1.4
   meleeEnemyPrefab: {fileID: 8687913692197600653, guid: 34bfceade45382648bae2db8d9a43632,
     type: 3}
   rangedEnemyPrefab: {fileID: 8276862314587099992, guid: efcf934ba031af64fa533b39d20c0440,

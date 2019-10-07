@@ -113,7 +113,13 @@ MonoBehaviour:
   damage: 1
   dieInColissionWithObstacles: 1
   dieInColissionWithPlayer: 1
+  maxDistanceToObstacleWhenChangingLine: 3
+  lineChangeDuration: 0.3
   health: {fileID: 0}
+  currentLine: 0
+  targetLine: 0
+  currentVelocity: 0
+  isChangingLine: 0
 --- !u!114 &8276862314587099995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2366
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 84d6d4d89ebd56e469ae7b00f2a115e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d6d4d89ebd56e469ae7b00f2a115e4, type: 3}
