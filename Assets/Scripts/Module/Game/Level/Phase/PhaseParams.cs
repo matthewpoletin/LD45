@@ -1,13 +1,26 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Module.Game.Level.Phase
 {
+    [Serializable]
+    public enum EnemySpawns
+    {
+        None = 0,
+        MeleeOnly = 1,
+        RangeOnly = 2,
+        MeleeAndRange = 3,
+        Boss = 4,
+    }
+
     [CreateAssetMenu(fileName = "New Phase Params", menuName = "Params/PhaseParams", order = 15)]
     public class PhaseParams : ScriptableObject
     {
         [SerializeField] private List<ChunkParams> chunks = null;
         [SerializeField] private float movementSpeed = 0;
+        [SerializeField] private bool spawnObstacles = true;
+        [SerializeField] private EnemySpawns _enemySpawns = EnemySpawns.None;
         [SerializeField] private PhaseType phaseType = PhaseType.Timeout;
         [SerializeField] private int completeConditionEnemies = 0;
         [SerializeField] private int completeConditionDuration = 0;
@@ -15,6 +28,8 @@ namespace Module.Game.Level.Phase
 
         public List<ChunkParams> Chunks => chunks;
         public float MovementSpeed => movementSpeed;
+        public bool SpawnObstacles => spawnObstacles;
+        public EnemySpawns EnemySpawns => _enemySpawns;
         public PhaseType PhaseType => phaseType;
         public int CompleteConditionEnemies => completeConditionEnemies;
         public float CompleteConditionDuration => completeConditionDuration;
