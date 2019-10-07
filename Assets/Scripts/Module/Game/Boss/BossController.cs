@@ -1,13 +1,9 @@
-﻿using Module.Game.BossView;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
+using Nothing;
 using UnityEngine;
 
-namespace Nothing {
+namespace Module.Game.Boss
+{
     //public enum BossState {
     //    Posing,
     //    PreLeftAttack,
@@ -16,10 +12,10 @@ namespace Nothing {
     //    RightAttack,
     //    Teeth
     //}
-    
-    [RequireComponent(typeof(Health))]
-    public class Boss : MonoBehaviour {
 
+    [RequireComponent(typeof(Health))]
+    public class BossController : MonoBehaviour
+    {
         public float posing1Duration = 5;
         public float posing2Duration = 3;
 
@@ -35,12 +31,12 @@ namespace Nothing {
 
         public BossAnimationView view;
 
-        [SerializeField, HideInInspector]
-        private Health health;
+        [SerializeField, HideInInspector] private Health health;
 
         public Health Health => health;
 
-        private void Start() {
+        private void Start()
+        {
             StartCoroutine(AttackSequence());
         }
 
@@ -49,7 +45,8 @@ namespace Nothing {
             health = GetComponent<Health>();
         }
 
-        private IEnumerator AttackSequence() {
+        private IEnumerator AttackSequence()
+        {
             yield return new WaitForSeconds(posing1Duration);
 
             yield return LeftAttack();
@@ -58,7 +55,8 @@ namespace Nothing {
 
             yield return RightAttack();
 
-            while (health.CurrentHealth > 0) {
+            while (health.CurrentHealth > 0)
+            {
                 yield return TeethAttack();
                 yield return LeftAttack();
                 yield return RightAttack();
@@ -67,18 +65,22 @@ namespace Nothing {
             }
         }
 
-        private IEnumerator LeftAttack() {
+        private IEnumerator LeftAttack()
+        {
             view.AttackLeft();
 
             yield return sideAttack.Attack(BossSideAttackVariant.LeftAndMiddle);
         }
-        private IEnumerator RightAttack() {
+
+        private IEnumerator RightAttack()
+        {
             view.AttackRight();
 
             yield return sideAttack.Attack(BossSideAttackVariant.RightAndMiddle);
         }
-        
-        private IEnumerator TeethAttack() {
+
+        private IEnumerator TeethAttack()
+        {
             yield return new WaitForSeconds(teethAttackDuration);
         }
     }

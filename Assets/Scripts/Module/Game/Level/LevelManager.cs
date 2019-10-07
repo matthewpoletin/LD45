@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Module.Game.Boss;
 using Module.Game.Level.Chunk;
 using Module.Game.Level.Obstacles;
 using Module.Game.Level.Phase;
@@ -182,7 +183,7 @@ namespace Module.Game.Level
         {
             yield return new WaitForSeconds(delay);
             var bossGameObject = Instantiate(bossPrefab, bossContainer);
-            var bossController = bossGameObject.GetComponent<Boss>();
+            var bossController = bossGameObject.GetComponent<BossController>();
             var bossView = bossController.view;
             bossView.ShowBoss();
             OnTotalProgressChange -= GameModule.Instance.UiManager.UpdateProgress;
