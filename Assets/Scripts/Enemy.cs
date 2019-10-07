@@ -41,6 +41,7 @@ namespace Nothing
 
         public virtual void OnEnemyDestroyed()
         {
+            GameModule.Instance.LevelManager.EnemiesKilledCounter++;
             GameModule.Instance.EventManager.ProcessEvent(EventType.EnemyDeath);
             Destroy(gameObject);
         }
