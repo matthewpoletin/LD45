@@ -6,8 +6,14 @@ namespace Nothing {
         public int damage = 1;
         public LayerMask ignoredLayerMask;
 
+        public Transform[] models;
+
         private static bool Contains(LayerMask mask, int layer) {
             return mask == (mask | (1 << layer));
+        }
+
+        private void Awake() {
+            models[Random.Range(0, models.Length)].gameObject.SetActive(true);
         }
 
         public void OnTriggerEnter(Collider other) {

@@ -113,6 +113,7 @@ MonoBehaviour:
   damage: 1
   dieInColissionWithObstacles: 1
   dieInColissionWithPlayer: 1
+  avoidObstacles: 1
   maxDistanceToObstacleWhenChangingLine: 3
   lineChangeDuration: 0.3
   health: {fileID: 0}
@@ -134,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPauseMin: 1.7
   attackPauseMax: 2.3
-  projectilePrefab: {fileID: 4743406424302143761, guid: 34233c92b1b678a4c9a99633d1df96ae,
+  projectilePrefab: {fileID: 7822942480777357373, guid: 03b380c7b57347644b8efb4576019925,
     type: 3}
 --- !u!114 &1506796092891894434
 MonoBehaviour:
