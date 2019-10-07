@@ -1,14 +1,26 @@
 fileFormatVersion: 2
-guid: 36fbbe86b4d73b9498fcfb50909f19dd
+guid: bd91dbcce12e46c468187e7823543ba6
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: 1409404963710248135
-    second: Death
+    second: Sword_Run
   - first:
       74: -8721050191592914793
     second: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Open_S"
+  - first:
+      74: -5972819587723127549
+    second: AttackSword1
+  - first:
+      74: 317640415490248476
+    second: AttackSword2
+  - first:
+      74: -8576541562303970522
+    second: Gun_Run
+  - first:
+      74: -6758483313513240000
+    second: death
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -30,26 +42,26 @@ ModelImporter:
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 0
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: 0
+    animationPositionError: 0
+    animationScaleError: 0
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Death
+      name: Sword_Run
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
       internalID: 1409404963710248135
-      firstFrame: 200
-      lastFrame: 220
+      firstFrame: 10
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -67,18 +79,105 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Open_S"
-      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Open_S"
-      internalID: -8721050191592914793
-      firstFrame: 0
-      lastFrame: 168
+      name: AttackSword1
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: -5972819587723127549
+      firstFrame: 230
+      lastFrame: 243
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AttackSword2
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: 317640415490248476
+      firstFrame: 245
+      lastFrame: 254
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Gun_Run
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: -8576541562303970522
+      firstFrame: 100
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: death
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: -6758483313513240000
+      firstFrame: 200
+      lastFrame: 220
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -98,7 +197,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -132,7 +231,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -144,12 +243,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.003
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: fbf952be89cc6544796f3958ba6528af,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
