@@ -8,13 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: floor_Line_Center_Material
-  m_Shader: {fileID: 4800000, guid: c2b596f4a7a036740976682920511887, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -96,4 +97,4 @@ Material:
     m_Colors:
     - _BendOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0.6}
-    - _EmissionColor: {r: 0.764151, g: 0.5409216, b: 0.43137255, a: 1}
+    - _EmissionColor: {r: 0.5943396, g: 0.29156283, b: 0.29156283, a: 0}
