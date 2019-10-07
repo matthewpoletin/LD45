@@ -222,7 +222,6 @@ namespace Module.Game.Level
                 case PhaseType.EnemiesKilled:
                 {
                     PhaseProgressLevel = (float) _enemiesKilledPhaseCounter / _currentPhaseCompletionEnemies;
-
                     break;
                 }
 
