@@ -1,5 +1,5 @@
 using System;
-using Module.Game.BossView;
+using System.Collections;
 using Module.Game.Level.Chunk;
 using Module.Game.Level.Obstacles;
 using Module.Game.Level.Phase;
@@ -168,15 +168,21 @@ namespace Module.Game.Level
                 case EnemySpawns.Boss:
                 {
                     GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
-                    var bossGameObject = Instantiate(bossPrefab, bossContainer);
-                    bossGameObject.GetComponent<Boss>().view.ShowBoss();
-                    _obstacleController.SpawnActive = false;
+                    StartCoroutine(SpawnBoss(6f));
                     break;
                 }
             }
 
             _chunksController.CurrentPhaseIndex = _currentPhaseIndex;
             _currentLevelMovementSpeed = nextPhaseParams.MovementSpeed;
+        }
+
+        private IEnumerator SpawnBoss(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            var bossGameObject = Instantiate(bossPrefab, bossContainer);
+            bossGameObject.GetComponent<Boss>().view.ShowBoss();
+            _obstacleController.SpawnActive = false;
         }
 
         public void Tick(float deltaTime)
