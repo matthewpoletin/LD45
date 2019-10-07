@@ -1,4 +1,4 @@
-﻿using Module.Game.Boss;
+﻿using Module.Game.BossView;
 using System;
 using System.Collections;
 using System.Collections.Generic;

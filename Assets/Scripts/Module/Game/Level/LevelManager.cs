@@ -1,5 +1,5 @@
 using System;
-using Module.Game.Boss;
+using Module.Game.BossView;
 using Module.Game.Level.Chunk;
 using Module.Game.Level.Obstacles;
 using Module.Game.Level.Phase;
@@ -169,7 +169,7 @@ namespace Module.Game.Level
                 {
                     GameModule.Instance.EnemySpawner.EnemyTypes = EnemyType.None;
                     var bossGameObject = Instantiate(bossPrefab, bossContainer);
-                    bossGameObject.GetComponent<BossAnimationView>().ShowBoss();
+                    bossGameObject.GetComponent<Boss>().view.ShowBoss();
                     _obstacleController.SpawnActive = false;
                     break;
                 }

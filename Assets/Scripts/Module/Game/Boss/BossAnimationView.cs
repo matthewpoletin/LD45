@@ -4,7 +4,7 @@ using UnityEngine;
 using EventType = Module.Game.Events.EventType;
 
 
-namespace Module.Game.Boss
+namespace Module.Game.BossView
 {
     public class BossAnimationView : MonoBehaviour
     {
