@@ -35,6 +35,8 @@ namespace Module.Game.Level
         private int _currentPhaseCompletionEnemies;
         private float _currentPhaseBossHealth;
 
+        private int _totalNonBossPhases = 0;
+
         public int EnemiesKilledCounter
         {
             get => _enemiesKilledCounter;
@@ -43,6 +45,7 @@ namespace Module.Game.Level
 
         public event Action OnPhaseCompletion;
         public event Action<float> OnPhaseLevelChange;
+        public event Action<float> OnTotalProgressChange;
         private float _phaseProgressLevel = 0f;
         private float _overallProgressLevel = 0f;
 
@@ -52,6 +55,9 @@ namespace Module.Game.Level
             {
                 _phaseProgressLevel = Mathf.Clamp(value, 0f, 1f);
                 OnPhaseLevelChange?.Invoke(_phaseProgressLevel);
+                var totalProgressLevel = (float) _currentPhaseIndex / _totalNonBossPhases +
+                                         _phaseProgressLevel / _totalNonBossPhases;
+                OnTotalProgressChange?.Invoke(totalProgressLevel);
                 if (_phaseProgressLevel >= 1f)
                 {
                     OnPhaseCompletion?.Invoke();
@@ -66,6 +72,8 @@ namespace Module.Game.Level
             _currentPhaseIndex = -1;
 
             _chunksController = new ChunkController(chunksContainer, _levelParams);
+
+            _totalNonBossPhases = Math.Max(_levelParams.Phases.Count - 1, 1);
 
             // Load prefab resources
             foreach (var phaseParams in _levelParams.Phases)

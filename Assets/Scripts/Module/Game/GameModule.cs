@@ -66,7 +66,8 @@ namespace Module.Game
             _vfxController = new VfxController();
             _eventManager = new EventManager(soundManager, _vfxController, GameParams.Events);
 
-            levelManager.OnPhaseLevelChange += uiManager.UpdateProgress;
+//            levelManager.OnPhaseLevelChange += uiManager.UpdateProgress;
+            levelManager.OnTotalProgressChange += uiManager.UpdateProgress;
             levelManager.OnPhaseCompletion += soundManager.ChangeMusicPhase;
         }
 
