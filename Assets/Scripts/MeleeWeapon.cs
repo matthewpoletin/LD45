@@ -18,15 +18,18 @@ namespace Nothing {
             weaponCollider.enabled = false;
         }
 
-        public override async Task Attack() {
+        public override void Attack() {
             if (IsAttacking)
                 return;
 
             IsAttacking = true;
+            StartCoroutine(AttackCoroutine());
+        }
 
+        private IEnumerator AttackCoroutine() {
             weaponCollider.enabled = true;
             GameModule.Instance.EventManager.ProcessEvent(EventType.PlayerAttack, transform, transform.position);
-            await Task.Delay((int)(useTime * 1000f));
+            yield return new WaitForSeconds(useTime);
             weaponCollider.enabled = false;
 
             IsAttacking = false;

@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Nothing {
     public class BazookaWeapon : Weapon {
-        public override Task Attack() => throw new NotImplementedException();
+        public override void Attack() => throw new NotImplementedException();
     }
 }

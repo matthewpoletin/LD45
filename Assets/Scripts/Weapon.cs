@@ -6,6 +6,6 @@ namespace Nothing {
         [field: SerializeField, HideInInspector]
         public bool IsAttacking { get; protected set; } = false;
 
-        public abstract Task Attack();
+        public abstract void Attack();
     }
 }
