@@ -25,20 +25,13 @@ namespace Nothing
         [SerializeField] private Animator animator = null;
 
         public bool IsActive { get; set; } = true;
-
-        [field: SerializeField, HideInInspector]
         public Line CurrentLine { get; private set; } = Line.Middle;
-        [field: SerializeField, HideInInspector]
         public Line TargetLine { get; private set; } = Line.Middle;
-        [field: SerializeField, HideInInspector]
         public bool IsChangingLine { get; private set; } = false;
-        [field: SerializeField, HideInInspector]
         public bool IsJumping { get; private set; } = false;
 
         [SerializeField]
         private Health playerHealth = null;
-
-        [field: SerializeField, HideInInspector]
         public Weapon CurrentWeapon { get; private set; } = null;
 
         public MeleeWeapon meleeWeapon;
@@ -50,10 +43,7 @@ namespace Nothing
         public float jumpVelocity = 10;
         public float gravity = 9.8f;
 
-        [SerializeField, HideInInspector]
         private float currentVelocity = 0;
-
-        [SerializeField, HideInInspector]
         private float velocityY = 0;
 
         private void OnEnable() {
@@ -83,7 +73,8 @@ namespace Nothing
             }
             
             if (CurrentWeapon != null) {
-                CurrentWeapon.gameObject.SetActive(false);
+                
+                CurrentWeapon.SetWeaponEnabled(false);
             }
 
             var weapons = new Dictionary<WeaponType, Weapon> {
@@ -93,7 +84,7 @@ namespace Nothing
                 { WeaponType.Bazooka, bazookaWeapon }
             };
             CurrentWeapon = weapons[weaponType];
-            CurrentWeapon?.gameObject.SetActive(true);
+            CurrentWeapon?.SetWeaponEnabled(true);
         }
 
         public void Attack() {
