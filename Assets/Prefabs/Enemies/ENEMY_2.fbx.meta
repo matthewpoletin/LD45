@@ -5,10 +5,10 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -6130150063986897262
-    second: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Attack"
+    second: Attack
   - first:
       74: 395390805935382647
-    second: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Run"
+    second: Run
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -34,7 +34,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -43,7 +43,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Attack"
+      name: Attack
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Attack"
       internalID: -6130150063986897262
       firstFrame: 0
@@ -54,7 +54,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -67,12 +67,38 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/Bone_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001/Bone.001_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002/Bone.002_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003/Bone.003_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.004"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.004/Bone.004_end"
+        weight: 0
+      - path: "\u0422\u0435\u043A\u0441\u0442.002"
+        weight: 0
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Run"
+      name: Run
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|Run"
       internalID: 395390805935382647
       firstFrame: 0
@@ -83,7 +109,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -96,8 +122,34 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/Bone_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001/Bone.001_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002/Bone.002_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003/Bone.003_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.004"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.004/Bone.004_end"
+        weight: 0
+      - path: "\u0422\u0435\u043A\u0441\u0442.002"
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     isReadable: 0

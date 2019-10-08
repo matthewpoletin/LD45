@@ -27,6 +27,12 @@ ModelImporter:
   - first:
       74: -6871152109257485581
     second: Shot
+  - first:
+      74: 7298281919102362115
+    second: Sword_Hand
+  - first:
+      74: -7251055699838741195
+    second: Start
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -80,8 +86,62 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/Bone_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/\u0422\u0435\u043A\u0441\u0442"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001/Bone.001_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002/Bone.002_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003/Bone.003_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head/Head_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand/L_hand_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2/L_Hand_2_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg/L_Leg_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand/R_Hand_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg/R_Leg_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine/Spine_end"
+        weight: 1
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
+        weight: 1
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440.001"
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -89,7 +149,7 @@ ModelImporter:
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
       internalID: -5972819587723127549
       firstFrame: 230
-      lastFrame: 243
+      lastFrame: 246
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -109,8 +169,62 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/Bone_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/\u0422\u0435\u043A\u0441\u0442"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001/Bone.001_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002/Bone.002_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003/Bone.003_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head/Head_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand/L_hand_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2/L_Hand_2_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg/L_Leg_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand/R_Hand_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg/R_Leg_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine/Spine_end"
+        weight: 0
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
+        weight: 0
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440.001"
+        weight: 0
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -255,6 +369,172 @@ ModelImporter:
       curves: []
       events: []
       transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sword_Hand
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: 7298281919102362115
+      firstFrame: 10
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/Bone_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/\u0422\u0435\u043A\u0441\u0442"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001/Bone.001_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002/Bone.002_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003/Bone.003_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head/Head_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand/L_hand_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2/L_Hand_2_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg/L_Leg_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand/R_Hand_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg/R_Leg_end"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine"
+        weight: 0
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine/Spine_end"
+        weight: 0
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
+        weight: 0
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440.001"
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Start
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|1"
+      internalID: -7251055699838741195
+      firstFrame: 210
+      lastFrame: 220
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/Bone_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone/\u0422\u0435\u043A\u0441\u0442"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.001/Bone.001_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.002/Bone.002_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Bone.003/Bone.003_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Head/Head_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_hand/L_hand_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Hand_2/L_Hand_2_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/L_Leg/L_Leg_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Hand/R_Hand_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/R_Leg/R_Leg_end"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine"
+        weight: 1
+      - path: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430/Spine/Spine_end"
+        weight: 1
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440"
+        weight: 1
+      - path: "\u0426\u0438\u043B\u0438\u043D\u0434\u0440.001"
+        weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
